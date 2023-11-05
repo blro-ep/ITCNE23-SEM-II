@@ -4,4 +4,8 @@
 
 ## Project Management
 
+## IaaC
+
+## FaaS
+
 ## Fazit
