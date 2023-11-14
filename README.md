@@ -28,7 +28,8 @@ Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufg
 
 ![Roadmap](picture/roadmap.png)
 
-|| Datum || Sprint ||
+| Datum | Sprint |
+| --- | --- |
 | 27.11.23 | Ergebnis 1. Sprint |
 | 18.12.23 | Ergebnis 2. Sprint |
 | 31.01.24 | Ergebnis 3. Sprint / Abgabe / Abnahem |
@@ -53,7 +54,6 @@ Das Ende von Sprint wird dokumentiert und der Stand des Kanbanboard grafisch fes
 
 
 #### Sprint 3 - 31.01.24
-
 
 
 ## IaaC
