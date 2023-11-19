@@ -15,22 +15,6 @@ Das gesamte Projektmangement wird in einem Github Project abgewickelt ([ITCNE23-
 ### Kanbanboard
 Die Visualisierung erfolgt in einem Kanbanboard. Daruch soll der Arbeitsfluss optimiert und die Effizeinz geteigert werden. Engpässe können damit identifiziert und entprechende Manssnahmen abgeleitet werden.
 
-#### Status
-Das Kanbanboard wir in 4 Spalten aufgeteilt.
-- Todo
-- In Progress
-- Done
-- Backlog
-
-![Kanbanboard](picture/kanban_board.png)
-
-#### Labels
-Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
-- Doku  --> Task für die Dokumentation
-- IaC   --> Task für Infrastructure as Code
-- FaaS  --> Task für Function as a Serivce
-
-
 ### Roadmap
 Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufgaben werden einen Sprint zugeordnet.
 
@@ -45,12 +29,27 @@ Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufg
 ### Tasklist
 Die Taskliste soll eine einfache möglichkeit bieten, um die Aufgaben nach Kategorien zu filtern.
 
-Kategorien:
+#### Task Kategorien
 - Status
 - Priority
 - Milestones
 
 ![Taskliste](picture/tasklist.png)
+
+#### Task Status
+Das Kanbanboard wir in 4 Spalten aufgeteilt.
+- Todo
+- In Progress
+- Done
+- Backlog
+
+![Kanbanboard](picture/kanban_board.png)
+
+#### Task Labels
+Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
+- Doku  --> Task für die Dokumentation
+- IaC   --> Task für Infrastructure as Code
+- FaaS  --> Task für Function as a Serivce
 
 ### SEUSAG
 #### Systemgrenze
@@ -128,7 +127,7 @@ sudo apt install npm (Node Package Manager)
 https://deb.nodesource.com/
 ```
 
-## IaC
+## Infrastructure as code
 ### AWS Lambda Function erstellen
 - [Lmabda AWS CLI](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html)
 

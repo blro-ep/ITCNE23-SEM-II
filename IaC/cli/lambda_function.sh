@@ -3,13 +3,14 @@
 # variables
 AWS_REGION="eu-central-2"
 PROFILE="default"
+IAM_ROLE_NAME="lambda-ex"
 
 # get role ARN
 ROLE_ARN=$(
 aws iam get-role \
     --profile $PROFILE \
     --region $AWS_REGION \
-    --role-name 'lambda-ex' \
+    --role-name $IAM_ROLE_NAME \
     --query 'Role.Arn' \
     --output text
 )
