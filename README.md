@@ -15,13 +15,21 @@ Das gesamte Projektmangement wird in einem Github Project abgewickelt ([ITCNE23-
 ### Kanbanboard
 Die Visualisierung erfolgt in einem Kanbanboard. Daruch soll der Arbeitsfluss optimiert und die Effizeinz geteigert werden. Engpässe können damit identifiziert und entprechende Manssnahmen abgeleitet werden.
 
-Das Kanbanboard wir in 4 Spalten aufgeteilt
+#### Status
+Das Kanbanboard wir in 4 Spalten aufgeteilt.
 - Todo
 - In Progress
 - Done
 - Backlog
 
 ![Kanbanboard](picture/kanban_board.png)
+
+#### Labels
+Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
+- Doku  --> Task für die Dokumentation
+- IaC   --> Task für Infrastructure as Code
+- FaaS  --> Task für Function as a Serivce
+
 
 ### Roadmap
 Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufgaben werden einen Sprint zugeordnet.
@@ -102,9 +110,11 @@ Das Ende von Sprint wird dokumentiert und der Stand des Kanbanboard grafisch fes
 #### Sprint 3 - 31.01.24
 
 
-## IaaC
+## Local System
+Als lokales System wir ein Ubuntu 22.04 verwendet. Von diesem System soll das Deployment der AWS Infrastruktur sowie die Verwatung des Function Code in Github erfolgen.
 
 ### Installation
+
 - [Install the AWS SDK for Python](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 - [Code examples for SDK for Python](https://docs.aws.amazon.com/code-library/latest/ug/python_3_code_examples.html)
 
@@ -118,6 +128,15 @@ sudo apt install npm (Node Package Manager)
 https://deb.nodesource.com/
 ```
 
+## IaC
+### AWS Lambda Function erstellen
+- [Lmabda AWS CLI](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html)
+
+### AWS Code Build Project erstellen
+
+### AWS API Gateway erstellen
+
+## CI / CD Pipeline
 
 ## FaaS
 
