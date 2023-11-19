@@ -65,10 +65,13 @@ Kategorien:
 
 ##### AWS Provider
 AWS wird verwendet, um eine FaaS zur Verfügung zu stellen, welche auf dem Service AWS Lambda aufgebaut wird.
-Das Deploment soll von Github angestossen werden.
+Das Deploment soll von Github angestossen werden und mitteld CodeBuild automatisch erfolgen. 
+Es ist zu prüfen, welche AWS Services für die Vorgehen zusätlich benötigt werden.
 
 ##### Github
 Github wird für die Code Verwaltung der Lambda Function eingesetzt und soll dem automatischen Deplomymentprozess in AWS anstossen.
+Der Code für die Function wird in einem Git Repo gehalten. 
+Git Project wird eingesetzt um die Umsetzung in Tasks aufzuteilen und den Fortschritt zu tracken.
 
 ##### Local System
 Der User erstellt und modifiziert den Code für die Lambda Function von seinem lokalen System in einem Github Repo.
