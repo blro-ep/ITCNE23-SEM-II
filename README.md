@@ -49,16 +49,35 @@ Kategorien:
 ![Roadmap](picture/systemgrenzen.png)
 
 #### Einflussgrößen
+![Einflussgrössen](picture/Einflussgroessen.png)
 
 #### Unter- bzw. Teilsysteme 
+![Unter-Teilsystem](picture/Unter-Teilsystem.png)
 
 #### Schnittstellen
+| Schnittstelle | <div style="width:175px">Element</div> | Beschreibung |
+|---------------|---------|-------------|
+| S1 | User / Git Repo | Der Code für die AWS Lambda Function wird in einem Git Repo verwaltet. |
+| S2 | User / AWS Services | Das Deployment der AWS Ressourcen erfolgt via AWS CLI / AWS SDK. |
+| S3 | Git / AWS | Das Deployment der Lambda Function erfolgt auf dem Git Repo. |
 
 #### Analyse der Unter- bzw. Teilsysteme
 
+##### AWS Provider
+AWS wird verwendet, um eine FaaS zur Verfügung zu stellen, welche auf dem Service AWS Lambda aufgebaut wird.
+Das Deploment soll von Github angestossen werden.
+
+##### Github
+Github wird für die Code Verwaltung der Lambda Function eingesetzt und soll dem automatischen Deplomymentprozess in AWS anstossen.
+
+##### Local System
+Der User erstellt und modifiziert den Code für die Lambda Function von seinem lokalen System in einem Github Repo.
+Das Deployment der notwendigen AWS Komponenten soll soweit möglich via AWS CLI / SDK automatisiert werden. 
+
 #### Gemeinsamkeiten
-
-
+- Git
+- Python
+- AWS-Schnittstellen
 
 ### Ziele SMART
 - Die nötigen AWS-Ressourcen für die Lambda Function sollen automatisiert erstellt werden können (z.B. AWS-CLI / AWS-SDK).
