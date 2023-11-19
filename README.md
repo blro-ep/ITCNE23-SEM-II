@@ -44,6 +44,30 @@ Kategorien:
 
 ![Taskliste](picture/tasklist.png)
 
+### SEUSAG
+#### Systemgrenze
+![Roadmap](picture/systemgrenzen.png)
+
+#### Einflussgrößen
+
+#### Unter- bzw. Teilsysteme 
+
+#### Schnittstellen
+
+#### Analyse der Unter- bzw. Teilsysteme
+
+#### Gemeinsamkeiten
+
+
+
+### Ziele SMART
+- Die nötigen AWS-Ressourcen für die Lambda Function sollen automatisiert erstellt werden können (z.B. AWS-CLI / AWS-SDK).
+- Die Lambda Function soll mit einem Git PUSH Befehl aktualisiert werden können. Dies bedeutet, dass die Code Änderungen aus dem GitRepo auto. in die Lambda Function übernommen wird.
+- Die Lambda Function soll mit der Programmiersprache Python umgesetzt werden.
+- Mittels GET API Request soll die Function mindestens den Status Code 200 zurück geben.
+
+### Testing
+
 ### Sprints
 Das Ende von Sprint wird dokumentiert und der Stand des Kanbanboard grafisch festgehalten.
 
@@ -71,11 +95,6 @@ sudo apt install npm (Node Package Manager)
 
 https://deb.nodesource.com/
 ```
-
-### Credentials
-~/.aws
-
-
 
 
 ## FaaS
