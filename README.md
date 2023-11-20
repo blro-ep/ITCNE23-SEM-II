@@ -50,6 +50,7 @@ Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
 - Doku  --> Task für die Dokumentation
 - IaC   --> Task für Infrastructure as Code
 - FaaS  --> Task für Function as a Serivce
+- Zert  --> Zertifizierung
 
 ### SEUSAG
 #### Systemgrenze
