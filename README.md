@@ -99,10 +99,20 @@ Das Deployment der notwendigen AWS Komponenten soll soweit möglich via AWS CLI 
 ### Testing
 
 ### Sprints
-Das Ende von Sprint wird dokumentiert und der Stand des Kanbanboard grafisch festgehalten.
+Das Ende von Sprint wird dokumentiert und der Stand der Taskliste grafisch festgehalten.
 
 #### Sprint 1 - 27.11.23
+Sprint 1 Übersicht 26.11.2023
+![Sprint 1](./picture/sprint-1.png)
 
+##### Reflektion
+Die von Github zur Verfügung gestellten Tools für das Projektmanagement eigenen sich sehr gut.
+Kandbanboard, Roadmap und Taskliste sind einfach zu erstellen und geben einen guten Überblick des Projektstandes.
+Die Projektdokumentation ist einem Readme festgehtlaten. Es wurde bewusst auf das Manuelle erstellen eines Inhaltsverzeichnis verzichtet, da dieses von Github per Standard zur Verfügung gestellt wird.
+
+Die Erstellung der Role mittels AWS CLI funktioniert gut und wird die Grundlage für die automatisierte Erstllung der Lambda Function sein. Die Unterscheidung ob eine Role nicht exisitiert oder die Abfrage ein Problem hat, war aufwändiger als gedacht.
+
+An der automatisierung mitteld AWS CLI wird festgehlaten. 
 
 #### Sprint 2 - 18.12.23
 
@@ -131,8 +141,10 @@ https://deb.nodesource.com/
 ## Infrastructure as code
 ### AWS Lambda Function erstellen
 - [Lmabda AWS CLI](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html)
+- [python_3_lambda_code_examples](https://docs.aws.amazon.com/code-library/latest/ug/python_3_lambda_code_examples.html)
 
 ### AWS Code Build Project erstellen
+- [create-project-cli](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html)
 
 ### AWS API Gateway erstellen
 
