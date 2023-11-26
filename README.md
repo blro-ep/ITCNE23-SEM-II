@@ -99,20 +99,20 @@ Das Deployment der notwendigen AWS Komponenten soll soweit möglich via AWS CLI 
 ### Testing
 
 ### Sprints
-Das Ende von Sprint wird dokumentiert und der Stand der Taskliste grafisch festgehalten.
+Am Ende eines Sprints erfolgt eine Reflektion, wobei der Status der Taskliste grafisch festgehalten wird.
 
 #### Sprint 1 - 27.11.23
 Sprint 1 Übersicht 26.11.2023
 ![Sprint 1](./picture/sprint-1.png)
 
 ##### Reflektion
-Die von Github zur Verfügung gestellten Tools für das Projektmanagement eigenen sich sehr gut.
-Kandbanboard, Roadmap und Taskliste sind einfach zu erstellen und geben einen guten Überblick des Projektstandes.
-Die Projektdokumentation ist einem Readme festgehtlaten. Es wurde bewusst auf das Manuelle erstellen eines Inhaltsverzeichnis verzichtet, da dieses von Github per Standard zur Verfügung gestellt wird.
+Die von GitHub bereitgestellten Tools für das Projektmanagement erweisen sich als äußerst effektiv. Die einfache Erstellung von Kanban-Boards, Roadmaps und Aufgabenlisten ermöglicht einen klaren Überblick über den Projektstatus.
 
-Die Erstellung der Role mittels AWS CLI funktioniert gut und wird die Grundlage für die automatisierte Erstllung der Lambda Function sein. Die Unterscheidung ob eine Role nicht exisitiert oder die Abfrage ein Problem hat, war aufwändiger als gedacht.
+Die Projektdokumentation ist in einem Readme festgehalten. Die bewusste Entscheidung, auf die manuelle Erstellung eines Inhaltsverzeichnisses zu verzichten, beruht darauf, dass GitHub standardmäßig diese Funktion bereitstellt.
 
-An der automatisierung mitteld AWS CLI wird festgehlaten. 
+Die Erstellung von Rollen mithilfe der AWS CLI verläuft reibungslos und bildet die Grundlage für die automatisierte Erstellung der Lambda-Funktion. Die Unterscheidung, ob eine Rolle nicht existiert oder die Abfrage ein Problem aufweist, gestaltete sich aufwändiger als ursprünglich angenommen.
+
+Die Automatisierung mittels AWS CLI wird weiterhin beibehalten.
 
 #### Sprint 2 - 18.12.23
 
