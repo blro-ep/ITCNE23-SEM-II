@@ -9,7 +9,7 @@ function checkRoleExist() {
     local role_name=$1
 
     # Überprüfen, ob die Rolle existiert
-    if aws iam get-role --profile $PROFILE --region $AWS_REGION --role-name $role_name &> /dev/null; then
+    if aws iam get-role \--profile $PROFILE --region $AWS_REGION --role-name $role_name &> /dev/null; then
         # Rolle existiert, gebe 0 zurück
         echo 0
     else

@@ -4,6 +4,7 @@
 AWS_REGION="eu-central-2"
 PROFILE="default"
 IAM_ROLE_NAME="SemLambdaExecute"
+FUNCTION_NAME="SemLambdaFunction"
 
 # get role ARN
 ROLE_ARN=$(
@@ -15,10 +16,11 @@ aws iam get-role \
     --output text
 )
 
-aws lambda create-function --profile $PROFILE \
+aws lambda create-function \
+    --profile $PROFILE \
     --region $AWS_REGION \
-    --function-name SemLambdaFunction \
+    --function-name $FUNCTION_NAME \
     --zip-file fileb://function.zip \
-    --handler lambda_function.lambda_handler \
-    --runtime python3.9 \
-    --role "arn:aws:iam::931054186430:role/SemLambdaExecute"
+    --handler SemLambdaFunction.lambda_handler \
+    --runtime python3.11 \
+    --role $ROLE_ARN
