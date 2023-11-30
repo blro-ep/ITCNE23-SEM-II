@@ -27,7 +27,7 @@ function does_role_exist() {
 }
 
 function does_batch_project_exist() {
-  aws aws codebuild batch-get-projects --names $1 > /dev/null 2>&1
+  aws codebuild batch-get-projects --names $1 > /dev/null 2>&1
   if [ 0 -eq $? ]; then
     echo "Batch-Project '$1' exists"
   else

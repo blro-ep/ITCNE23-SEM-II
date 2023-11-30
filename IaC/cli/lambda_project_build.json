@@ -1,0 +1,113 @@
+{
+    "name": "test",
+    "description": "test",
+    "source": {
+      "type": "GITHUB",
+      "location": "https://github.com/blro-ep/github-to-lambda-demo.git",
+      "gitCloneDepth": 1,
+      "buildspec": "buildspec.yml",
+      "reportBuildStatus": false,
+      "buildStatusConfig": {
+        "context": "GITHUB",
+        "targetUrl": "https://github.com/blro-ep/github-to-lambda-demo.git"
+      },
+      "gitSubmodulesConfig": {
+        "fetchSubmodules": false
+      },
+      "sourceIdentifier": "<source-identifier>"
+    },
+    "secondarySources": [
+      {
+          "type": "GITHUB",
+          "location": "https://github.com/blro-ep/github-to-lambda-demo.git",
+          "gitCloneDepth": 1,
+          "buildspec": "buildspec.yml",
+          "reportBuildStatus": false,
+          "sourceIdentifier": "<source-identifier>"
+      }
+    ],
+    "secondarySourceVersions": [
+      {
+        "sourceIdentifier": "<secondary-source-identifier>",
+        "sourceVersion": "<secondary-source-version>"
+      }
+    ],
+    "sourceVersion": "<source-version>",
+    "artifacts": {
+      "type": "NO_ARTIFACTS",
+      "location": "NO_ARTIFACTS",
+      "path": "NO_ARTIFACTS",
+      "namespaceType": "NO_ARTIFACTS",
+      "name": "NO_ARTIFACTS",
+      "overrideArtifactName": false,
+      "packaging": "NO_ARTIFACTS"
+    },
+    "secondaryArtifacts": [
+      {
+        "type": "NO_ARTIFACTS",
+        "location": "<secondary-artifact-location>",
+        "path": "<secondary-artifact-path>",
+        "namespaceType": "<secondary-artifact-namespaceType>",
+        "name": "<secondary-artifact-name>",
+        "packaging": "<secondary-artifact-packaging>",
+        "artifactIdentifier": "<secondary-artifact-identifier>"
+      }
+    ],
+    "environment": {
+      "type": "LINUX_CONTAINER",
+      "image": "aws/codebuild/standard:5.0",
+      "computeType": "BUILD_GENERAL1_SMALL",
+      "certificate": "<certificate>",
+      "environmentVariables": [
+        {
+          "name": "<environmentVariable-name>",
+          "value": "<environmentVariable-value>",
+          "type": "<environmentVariable-type>"
+        }
+      ],
+      "imagePullCredentialsType": "CODEBUILD",
+      "privilegedMode": false
+    },
+    "serviceRole": "arn:aws:iam::931054186430:role/service-role/codebuild-github-to-lambda-service-role",
+    "timeoutInMinutes": 60,
+    "queuedTimeoutInMinutes": 480,
+    "encryptionKey": "<encryption-key>",
+    "tags": [
+      {
+        "key": "<tag-key>",
+        "value": "<tag-value>"
+      }
+    ],
+    "vpcConfig": {
+      "securityGroupIds": [
+           "<security-group-id>"
+      ],
+      "subnets": [
+           "<subnet-id>"
+      ],
+      "vpcId": "<vpc-id>"
+    },
+    "badgeEnabled": false,
+    "logsConfig": {
+      "cloudWatchLogs": {
+        "status": "DISABLED",
+        "groupName": "<group-name>",
+        "streamName": "<stream-name>"
+      },
+      "s3Logs": {
+        "status": "DISABLED",
+        "location": "<s3-logs-location>",
+        "encryptionDisabled": false
+      }
+    },
+    "fileSystemLocations": [
+      {
+        "type": "EFS",
+        "location": "<EFS-DNS-name-1>:/<directory-path>",
+        "mountPoint": "<mount-point>",
+        "identifier": "<efs-identifier>",
+        "mountOptions": "<efs-mount-options>"
+      }
+    ],
+    "concurrentBuildLimit": 1
+  }

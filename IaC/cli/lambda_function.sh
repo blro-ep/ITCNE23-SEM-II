@@ -21,6 +21,6 @@ aws lambda create-function \
     --region $AWS_REGION \
     --function-name $FUNCTION_NAME \
     --zip-file fileb://function.zip \
-    --handler SemLambdaFunction.lambda_handler \
+    --handler $FUNCTION_NAME.lambda_handler \
     --runtime python3.11 \
     --role $ROLE_ARN

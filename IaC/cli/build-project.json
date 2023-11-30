@@ -1,160 +1,70 @@
 {
-    "name": "",
-    "description": "",
-    "source": {
-        "type": "CODECOMMIT",
-        "location": "",
-        "gitCloneDepth": 0,
-        "gitSubmodulesConfig": {
-            "fetchSubmodules": true
-        },
-        "buildspec": "",
-        "auth": {
-            "type": "OAUTH",
-            "resource": ""
-        },
-        "reportBuildStatus": true,
-        "buildStatusConfig": {
-            "context": "",
-            "targetUrl": ""
-        },
-        "insecureSsl": true,
-        "sourceIdentifier": ""
-    },
-    "secondarySources": [
+    "projects": [
         {
-            "type": "CODECOMMIT",
-            "location": "",
-            "gitCloneDepth": 0,
-            "gitSubmodulesConfig": {
-                "fetchSubmodules": true
+            "name": "github-to-lambda-2",
+            "arn": "arn:aws:codebuild:eu-central-2:931054186430:project/github-to-lambda",
+            "source": {
+                "type": "GITHUB",
+                "location": "https://github.com/blro-ep/github-to-lambda-demo.git",
+                "gitCloneDepth": 1,
+                "gitSubmodulesConfig": {
+                    "fetchSubmodules": false
+                },
+                "reportBuildStatus": false,
+                "insecureSsl": false
             },
-            "buildspec": "",
-            "auth": {
-                "type": "OAUTH",
-                "resource": ""
+            "secondarySources": [],
+            "sourceVersion": "main",
+            "secondarySourceVersions": [],
+            "artifacts": {
+                "type": "NO_ARTIFACTS"
             },
-            "reportBuildStatus": true,
-            "buildStatusConfig": {
-                "context": "",
-                "targetUrl": ""
+            "secondaryArtifacts": [],
+            "cache": {
+                "type": "NO_CACHE"
             },
-            "insecureSsl": true,
-            "sourceIdentifier": ""
-        }
-    ],
-    "sourceVersion": "",
-    "secondarySourceVersions": [
-        {
-            "sourceIdentifier": "",
-            "sourceVersion": ""
-        }
-    ],
-    "artifacts": {
-        "type": "CODEPIPELINE",
-        "location": "",
-        "path": "",
-        "namespaceType": "NONE",
-        "name": "",
-        "packaging": "NONE",
-        "overrideArtifactName": true,
-        "encryptionDisabled": true,
-        "artifactIdentifier": "",
-        "bucketOwnerAccess": "NONE"
-    },
-    "secondaryArtifacts": [
-        {
-            "type": "CODEPIPELINE",
-            "location": "",
-            "path": "",
-            "namespaceType": "NONE",
-            "name": "",
-            "packaging": "NONE",
-            "overrideArtifactName": true,
-            "encryptionDisabled": true,
-            "artifactIdentifier": "",
-            "bucketOwnerAccess": "NONE"
-        }
-    ],
-    "cache": {
-        "type": "NO_CACHE",
-        "location": "",
-        "modes": [
-            "LOCAL_DOCKER_LAYER_CACHE"
-        ]
-    },
-    "environment": {
-        "type": "WINDOWS_CONTAINER",
-        "image": "",
-        "computeType": "BUILD_GENERAL1_SMALL",
-        "environmentVariables": [
-            {
-                "name": "",
-                "value": "",
-                "type": "PLAINTEXT"
+            "environment": {
+                "type": "LINUX_CONTAINER",
+                "image": "aws/codebuild/standard:5.0",
+                "computeType": "BUILD_GENERAL1_SMALL",
+                "environmentVariables": [],
+                "privilegedMode": false,
+                "imagePullCredentialsType": "CODEBUILD"
+            },
+            "serviceRole": "arn:aws:iam::931054186430:role/service-role/codebuild-github-to-lambda-service-role",
+            "timeoutInMinutes": 60,
+            "queuedTimeoutInMinutes": 480,
+            "encryptionKey": "arn:aws:kms:eu-central-2:931054186430:alias/aws/s3",
+            "tags": [],
+            "created": "2023-10-29T12:50:26.437000+01:00",
+            "lastModified": "2023-10-29T12:50:27.008000+01:00",
+            "webhook": {
+                "url": "https://api.github.com/repos/blro-ep/github-to-lambda-demo/hooks/440512381",
+                "payloadUrl": "https://codebuild.eu-central-2.amazonaws.com/webhooks?t=eyJlbmNyeXB0ZWRCeXRlcyI6IkxXNDY2UGI1bTJMVHViNGlxbncyczhvRFgydUVPTVJ1ZVNvOHArcjZnTUVvTG5hN0dIb1RBcmEyajQrdUdDeG5oMjAzOGpscE42ZTJHSnVHM1N5RTRIND0iLCJpdlNwZWMiOiJsN3RReWFxaDVFWEdTSGlKIiwic2VjcmV0VmVyc2lvbiI6IjVhMDM4ZTljLTA3MzctNDQ5ZS04NmVjLWQ5ZTNhMDUyYmJmYyJ9&v=1",
+                "filterGroups": [
+                    [
+                        {
+                            "type": "EVENT",
+                            "pattern": "PUSH",
+                            "excludeMatchedPattern": false
+                        }
+                    ]
+                ],
+                "buildType": "BUILD"
+            },
+            "badge": {
+                "badgeEnabled": false
+            },
+            "logsConfig": {
+                "cloudWatchLogs": {
+                    "status": "DISABLED"
+                },
+                "s3Logs": {
+                    "status": "DISABLED",
+                    "encryptionDisabled": false
+                }
             }
-        ],
-        "privilegedMode": true,
-        "certificate": "",
-        "registryCredential": {
-            "credential": "",
-            "credentialProvider": "SECRETS_MANAGER"
-        },
-        "imagePullCredentialsType": "CODEBUILD"
-    },
-    "serviceRole": "",
-    "timeoutInMinutes": 0,
-    "queuedTimeoutInMinutes": 0,
-    "encryptionKey": "",
-    "tags": [
-        {
-            "key": "",
-            "value": ""
         }
     ],
-    "vpcConfig": {
-        "vpcId": "",
-        "subnets": [
-            ""
-        ],
-        "securityGroupIds": [
-            ""
-        ]
-    },
-    "badgeEnabled": true,
-    "logsConfig": {
-        "cloudWatchLogs": {
-            "status": "ENABLED",
-            "groupName": "",
-            "streamName": ""
-        },
-        "s3Logs": {
-            "status": "ENABLED",
-            "location": "",
-            "encryptionDisabled": true,
-            "bucketOwnerAccess": "NONE"
-        }
-    },
-    "fileSystemLocations": [
-        {
-            "type": "EFS",
-            "location": "",
-            "mountPoint": "",
-            "identifier": "",
-            "mountOptions": ""
-        }
-    ],
-    "buildBatchConfig": {
-        "serviceRole": "",
-        "combineArtifacts": true,
-        "restrictions": {
-            "maximumBuildsAllowed": 0,
-            "computeTypesAllowed": [
-                ""
-            ]
-        },
-        "timeoutInMins": 0,
-        "batchReportMode": "REPORT_INDIVIDUAL_BUILDS"
-    },
-    "concurrentBuildLimit": 0
+    "projectsNotFound": []
 }
