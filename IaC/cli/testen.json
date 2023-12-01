@@ -1,0 +1,57 @@
+{
+    "projects": [
+        {
+            "name": "testen",
+            "arn": "arn:aws:codebuild:eu-central-2:931054186430:project/testen",
+            "source": {
+                "type": "S3",
+                "location": "sem-2-input/function.zip",
+                "insecureSsl": false
+            },
+            "secondarySources": [],
+            "secondarySourceVersions": [],
+            "artifacts": {
+                "type": "S3",
+                "location": "sem-2-output",
+                "path": "",
+                "namespaceType": "NONE",
+                "name": "testen",
+                "packaging": "NONE",
+                "overrideArtifactName": false,
+                "encryptionDisabled": false
+            },
+            "secondaryArtifacts": [],
+            "cache": {
+                "type": "NO_CACHE"
+            },
+            "environment": {
+                "type": "LINUX_CONTAINER",
+                "image": "aws/codebuild/standard:5.0",
+                "computeType": "BUILD_GENERAL1_SMALL",
+                "environmentVariables": [],
+                "privilegedMode": false,
+                "imagePullCredentialsType": "CODEBUILD"
+            },
+            "serviceRole": "arn:aws:iam::931054186430:role/service-role/codebuild-testen-service-role",
+            "timeoutInMinutes": 60,
+            "queuedTimeoutInMinutes": 480,
+            "encryptionKey": "arn:aws:kms:eu-central-2:931054186430:alias/aws/s3",
+            "tags": [],
+            "created": "2023-12-01T22:12:45.656000+01:00",
+            "lastModified": "2023-12-01T22:12:45.656000+01:00",
+            "badge": {
+                "badgeEnabled": false
+            },
+            "logsConfig": {
+                "cloudWatchLogs": {
+                    "status": "DISABLED"
+                },
+                "s3Logs": {
+                    "status": "DISABLED",
+                    "encryptionDisabled": false
+                }
+            }
+        }
+    ],
+    "projectsNotFound": []
+}
