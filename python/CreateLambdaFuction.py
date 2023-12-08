@@ -45,7 +45,7 @@ with open('function.zip', 'rb') as zip_file:
     except lambda_client.exceptions.ResourceNotFoundException:
         response = lambda_client.create_function(
             FunctionName=function_name,
-            Runtime='python3.11',
+            Runtime='python3.9',
             Role='arn:aws:iam::931054186430:role/SemLambdaExecute',
             Handler='SemLambdaFunction.lambda_handler',
             Code={
