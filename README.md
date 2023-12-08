@@ -121,8 +121,12 @@ Bei den Übungen hatte ich dann bemerkt, dass ich vielfach bei den selben Themen
 Am 05.12.2023 konnte ich dann die Zertifizierung erfolgreich abschliessen.
 [AWS Certified Cloud Practitioner certificate](./picture/AWS%20Certified%20Cloud%20Practitioner%20certificate.png)
 
-
-
+Die automatisierung von aws CodeBuild Project stellt sich als grosse Herausfoerfung heraus.
+Ziel wäre gesesn, dies via AWS CLI in form von einem Bash-Script automatisch zu erstellen.
+Gemäss der Dokumentation, kann das Projekt in einem json File abgebildet und anschliessend via CLI importiert werden. Das Template ist schnell erstellt, jedoch sehr umfangreich. Ich habe diese dann auf meinen Projekt angepasst, konnte diese jedoch aufgrund von fehlenden Abhängingkeiten nicht importieren.
+Beim Import kann das Logging aktivieren, jedoch ist dies nicht wirklich hilfreich.
+Bis jetzt habe ich noch keine Lösung gefunden. Auch die Beispiel von AWS [codebuild-demo-project](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/codebuild/create-project.html) hat bei mir nicht funktioniert.
+Ich werde es im 3. Sprint noch mit Boto3 versuchen.
 
 
 
@@ -135,19 +139,15 @@ Als lokales System wir ein Ubuntu 22.04 verwendet. Von diesem System soll das De
 
 ### Installation
 
-- [Install the AWS SDK for Python](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
-- [Code examples for SDK for Python](https://docs.aws.amazon.com/code-library/latest/ug/python_3_code_examples.html)
-- [Working with the AWS CDK in Python](https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-python.html)
+#### AWS CLI
+Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung installiert [Install or update the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install)
 
-```
-pip install boto3[crt]
+#### Boto3
+Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von foldender AWS Dokumentation installiert [boto3.amazonaws.com - quickstart](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html).
 
-sudo apt install tox
+##### Dokumentation
+Folgende AWS Dokumentationen liefert gute [Code examples for SDK for Python](https://docs.aws.amazon.com/code-library/latest/ug/python_3_code_examples.html). Des weitern sind auch interessante Informationen unter [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/1.16.36/reference/services/index.html) zu finden.
 
-sudo apt install npm (Node Package Manager)
-
-https://deb.nodesource.com/
-```
 
 ## Infrastructure as code
 ### AWS Lambda Function erstellen
