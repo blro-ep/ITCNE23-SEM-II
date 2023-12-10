@@ -3,8 +3,8 @@ import boto3
 import json
 
 # Variablen
-IAM_ROLE_NAME = "SemLambdaExecute"
-TRUST_POLICY_FILE = "LambdaTrustPolicy.json"
+IAM_ROLE_NAME = "SemBuildProjectRole"
+TRUST_POLICY_FILE = "test.json"
 
 def check_role_exist(role_name):
     # Überprüfen, ob die Rolle existiert

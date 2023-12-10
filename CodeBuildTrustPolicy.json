@@ -1,0 +1,59 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Resource": [
+				"arn:aws:logs:eu-central-2:931054186430:log-group:/aws/codebuild/SemLambdaFunction",
+				"arn:aws:logs:eu-central-2:931054186430:log-group:/aws/codebuild/SemLambdaFunction:*"
+			],
+			"Action": [
+				"logs:CreateLogGroup",
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lambda:AddPermission",
+				"lambda:RemovePermission",
+				"lambda:CreateAlias",
+				"lambda:UpdateAlias",
+				"lambda:DeleteAlias",
+				"lambda:UpdateFunctionCode",
+				"lambda:UpdateFunctionConfiguration",
+				"lambda:PutFunctionConcurrency",
+				"lambda:DeleteFunctionConcurrency",
+				"lambda:PublishVersion"
+			],
+			"Resource": "arn:aws:lambda:eu-central-2:931054186430:function:SemLambdaFunction"
+		},
+		{
+			"Effect": "Allow",
+			"Resource": [
+				"arn:aws:s3:::codepipeline-eu-central-2-*"
+			],
+			"Action": [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:GetBucketAcl",
+				"s3:GetBucketLocation"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"codebuild:CreateReportGroup",
+				"codebuild:CreateReport",
+				"codebuild:UpdateReport",
+				"codebuild:BatchPutTestCases",
+				"codebuild:BatchPutCodeCoverages"
+			],
+			"Resource": [
+				"arn:aws:codebuild:eu-central-2:931054186430:report-group/SemLambdaFunction-*"
+			]
+		}
+	]
+}
