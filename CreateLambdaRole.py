@@ -4,16 +4,16 @@ import json
 
 # Variablen
 IAM_ROLE_NAME = "SemLambdaExecute"
-TRUST_POLICY_FILE = "trust-policy.json"
+TRUST_POLICY_FILE = "LambdaTrustPolicy.json"
 
 def check_role_exist(role_name):
     # Überprüfen, ob die Rolle existiert
     try:
         iam_client.get_role(RoleName=role_name)
-        # Rolle existiert, gebe True zurück
+        # Rolle existiert
         return True
     except iam_client.exceptions.NoSuchEntityException:
-        # Rolle existiert nicht, gebe False zurück
+        # Rolle existiert nicht
         return False
 
 # AWS IAM-Client erstellen
