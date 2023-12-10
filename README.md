@@ -77,13 +77,18 @@ Das Deploment soll von Github angestossen werden und mitteld CodeBuild automatis
 Es ist zu prüfen, welche AWS Services für die Vorgehen zusätlich benötigt werden.
 
 ##### Github
-Github wird für die Code Verwaltung der Lambda Function eingesetzt und soll dem automatischen Deplomymentprozess in AWS anstossen.
-Der Code für die Function wird in einem Git Repo gehalten. 
-Git Project wird eingesetzt um die Umsetzung in Tasks aufzuteilen und den Fortschritt zu tracken.
+Github wird für das Projektmanagent eingesetzt. Anhand von einem Github Project, wird die Semsterarbeit in Task aufgeteilt, welche innerhalb eines Sprint abgearbeitet werden.
 
-##### Local System
-Der User erstellt und modifiziert den Code für die Lambda Function von seinem lokalen System in einem Github Repo.
-Das Deployment der notwendigen AWS Komponenten soll soweit möglich via AWS CLI / SDK automatisiert werden. 
+Im Github Repository befindet sich der gesamte Code der Semserarbeit.
+Diese Repository wird ebenfalls verwendet, um die Lambda Function mittels git Push zu aktualisieren.
+
+[ITCNE23-SEM-II]{https://github.com/blro-ep/ITCNE23-SEM-II#project-management}
+
+##### Entwicklungsumgebung
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.3 LTS
+Release:	    22.04
+Codename:	    jammy
 
 #### Gemeinsamkeiten
 - Git
@@ -95,8 +100,6 @@ Das Deployment der notwendigen AWS Komponenten soll soweit möglich via AWS CLI 
 - Die Lambda Function soll mit einem Git PUSH Befehl aktualisiert werden können. Dies bedeutet, dass die Code Änderungen aus dem GitRepo auto. in die Lambda Function übernommen wird.
 - Die Lambda Function soll mit der Programmiersprache Python umgesetzt werden.
 - Mittels GET API Request soll die Function mindestens den Status Code 200 zurück geben.
-
-### Testing
 
 ### Sprints
 Am Ende eines Sprints erfolgt eine Reflektion, wobei der Status der Taskliste grafisch festgehalten wird.
@@ -134,19 +137,32 @@ Ich werde es im 3. Sprint noch mit Boto3 versuchen.
 #### Sprint 3 - 31.01.24
 
 
-## Local System
-Als lokales System wir ein Ubuntu 22.04 verwendet. Von diesem System soll das Deployment der AWS Infrastruktur sowie die Verwatung des Function Code in Github erfolgen.
 
-### Installation
 
-#### AWS CLI
-Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung installiert [Install or update the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install)
+## Installation
 
-#### Boto3
+### AWS CLI
+Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung installiert [Install or update the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install).
+
+### Boto3
 Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von foldender AWS Dokumentation installiert [boto3.amazonaws.com - quickstart](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html).
 
-##### Dokumentation
+#### Dokumentation
 Folgende AWS Dokumentationen liefert gute [Code examples for SDK for Python](https://docs.aws.amazon.com/code-library/latest/ug/python_3_code_examples.html). Des weitern sind auch interessante Informationen unter [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/1.16.36/reference/services/index.html) zu finden.
+
+
+#### AWS Komponenten
+
+##### Rules
+
+
+###### Policy
+
+
+##### Function
+
+
+##### CodeBuild
 
 
 ## Infrastructure as code
@@ -162,5 +178,7 @@ Folgende AWS Dokumentationen liefert gute [Code examples for SDK for Python](htt
 ## CI / CD Pipeline
 
 ## FaaS
+
+## Testing
 
 ## Fazit
