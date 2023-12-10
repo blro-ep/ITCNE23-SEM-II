@@ -153,7 +153,7 @@ Folgende AWS Dokumentationen liefert gute [Code examples for SDK for Python](htt
 
 #### AWS Komponenten
 
-##### Rules
+##### Role
 
 
 ###### Policy

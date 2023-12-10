@@ -4,7 +4,7 @@ import json
 
 # Variablen
 IAM_ROLE_NAME = "SemBuildProjectRole"
-TRUST_POLICY_FILE = "test.json"
+TRUST_POLICY_FILE = "LambdaTrustPolicy.json"
 
 def check_role_exist(role_name):
     # Überprüfen, ob die Rolle existiert
@@ -37,7 +37,7 @@ if not check_role_exist(IAM_ROLE_NAME):
     # Berechtigung zur Trust-Policy hinzufügen (AWSLambdaBasicExecutionRole)
     iam_client.attach_role_policy(
         RoleName=IAM_ROLE_NAME,
-        PolicyArn='arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+        PolicyArn='arn:aws:iam::931054186430:policy/SemCodeBuildPolicy'
     )
 
     print("Die Rolle wurde erfolgreich erstellt.")
