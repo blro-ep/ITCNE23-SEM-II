@@ -32,7 +32,6 @@ with open('function.zip', 'rb') as zip_file:
     zipped_code = zip_file.read()
     function_name = 'SemLambdaFunction'
 
-
     # Versuche die Lambda-Funktion zu aktualisieren
     try:
         response = lambda_client.update_function_code(
