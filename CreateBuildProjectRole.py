@@ -4,7 +4,7 @@ import json
 
 # Variablen
 IAM_ROLE_NAME = "SemBuildProjectRole"
-TRUST_POLICY_FILE = "LambdaTrustPolicy.json"
+TRUST_POLICY_FILE = "CodeBuildTrustRelationship.json"
 
 def check_role_exist(role_name):
     # Überprüfen, ob die Rolle existiert

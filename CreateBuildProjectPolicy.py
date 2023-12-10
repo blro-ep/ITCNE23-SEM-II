@@ -2,6 +2,7 @@ import boto3
 import json
 
 CODEBUILD_POLICY = "SemCodeBuildPolicy"
+CODEBUILD_TRUST_POLICY = "CodeBuildTrustPolicy.json"
 
 # Erstelle eine AWS Identity and Access Management (IAM)-Verbindung
 iam = boto3.client('iam')
