@@ -124,12 +124,14 @@ Bei den Übungen hatte ich dann bemerkt, dass ich vielfach bei den selben Themen
 Am 05.12.2023 konnte ich dann die Zertifizierung erfolgreich abschliessen.
 [AWS Certified Cloud Practitioner certificate](./picture/AWS%20Certified%20Cloud%20Practitioner%20certificate.png)
 
-Die automatisierung von aws CodeBuild Project stellt sich als grosse Herausfoerfung heraus.
-Ziel wäre gesesn, dies via AWS CLI in form von einem Bash-Script automatisch zu erstellen.
-Gemäss der Dokumentation, kann das Projekt in einem json File abgebildet und anschliessend via CLI importiert werden. Das Template ist schnell erstellt, jedoch sehr umfangreich. Ich habe diese dann auf meinen Projekt angepasst, konnte diese jedoch aufgrund von fehlenden Abhängingkeiten nicht importieren.
-Beim Import kann das Logging aktivieren, jedoch ist dies nicht wirklich hilfreich.
-Bis jetzt habe ich noch keine Lösung gefunden. Auch die Beispiel von AWS [codebuild-demo-project](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/codebuild/create-project.html) hat bei mir nicht funktioniert.
-Ich werde es im 3. Sprint noch mit Boto3 versuchen.
+Nach der Einarbeitung in die AWS SDK habe ich mich entschieden, sämtliche automatisierungen mittels boto3 (Python) abzuwickeln. Somit habe ich die bestehenden AWS CLI Bash Scripts aus dem Sprint 1 auch gleich umgeschrieben. 
+Die Automatisierung via Boto3 hat sich jedoch aufwändiger herausgestellt, als erwartet.
+So waren die Abhängigkeiten zwischen LambdaFunction, Roles, Policy, CodeBuild nicht einfach zu verstehen.
+Den grössten Aufwand hatte ich mit der automatisierung von CodeBuild. Anhand der Dokumentation war mir nicht klar, welche Werte zwingende notwending sind und wie diese abgefüllt werden. Was mir geholfen hat, war das erstellen via Gui und einen anschliessender Export in ein json File.
+Dass der Webhook seperat erstellt werden muss, war mir ebenfalls nicht klar und hat mich viel Zeit gekostest.
+
+Dieser Sprint war sehr lehrreich in Bezug auf das Deployment mittels CodeBuild und Github.
+
 
 
 
