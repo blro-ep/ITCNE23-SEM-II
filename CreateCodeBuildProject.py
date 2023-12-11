@@ -1,10 +1,11 @@
+#!/usr/bin/python3.10
 import boto3
 import json
 
 client = boto3.client('codebuild')
 
 response = client.create_project(
-    name='SEM-TEST-1',
+    name='SEM-TEST-3',
     description='Test',
     source={
         'type': 'GITHUB',
@@ -42,7 +43,7 @@ response = client.create_project(
     timeoutInMinutes=60,
     queuedTimeoutInMinutes=480,
     encryptionKey='arn:aws:kms:eu-central-2:931054186430:alias/aws/s3',
-    tags=[],
+    tags=[], 
     badgeEnabled=False,
     logsConfig={
         'cloudWatchLogs': {
