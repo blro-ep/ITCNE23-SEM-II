@@ -3,8 +3,9 @@ import boto3
 
 client = boto3.client('codebuild')
 
-response = client.create_webhook(
+response = client.update_webhook(
     projectName='SEM-TEST-1',
+    rotateSecret=False,
     filterGroups=[
         [
             {
