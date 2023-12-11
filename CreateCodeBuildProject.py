@@ -43,9 +43,7 @@ response = client.create_project(
     queuedTimeoutInMinutes=480,
     encryptionKey='arn:aws:kms:eu-central-2:931054186430:alias/aws/s3',
     tags=[],
-
-    
-    badgeEnabled=False
+    badgeEnabled=False,
     logsConfig={
         'cloudWatchLogs': {
             'status': 'DISABLED'
@@ -56,3 +54,5 @@ response = client.create_project(
         }
     }
 )
+
+print(response)
