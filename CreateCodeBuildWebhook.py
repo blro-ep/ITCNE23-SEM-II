@@ -5,6 +5,7 @@ client = boto3.client('codebuild')
 
 response = client.create_webhook(
     projectName='SEM-TEST-3',
+    #branchName='?event=push',
     filterGroups=[
         [
             {
