@@ -10,7 +10,8 @@ response = client.create_webhook(
         [
             {
                 'type': 'EVENT',
-                'pattern': 'PUSH'
+                'pattern': 'PUSH',
+                'excludeMatchedPattern': False
             },
         ],
     ],
