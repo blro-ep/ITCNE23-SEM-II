@@ -5,7 +5,7 @@ import json
 client = boto3.client('codebuild')
 
 response = client.create_project(
-    name='SEM-TEST-4',
+    name='SEM-TEST-5',
     description='Test',
     source={
         'type': 'GITHUB',
