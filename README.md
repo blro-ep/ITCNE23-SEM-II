@@ -117,7 +117,7 @@ Die Erstellung von Rollen mithilfe der AWS CLI verläuft reibungslos und bildet 
 Die Automatisierung mittels AWS CLI wird weiterhin beibehalten.
 
 #### Sprint 2 - 18.12.23
-![Sprint 2](./picture/sprint-2.png)
+![Sprint 2](./picture/spi)
 
 **WS Certified Cloud Practitioner**
 Die Zertifizierung zum AWS Certified Cloud Practitioner hat mehr Zeit in Anspruch genommen als geplant.
