@@ -124,17 +124,19 @@ Bei den Übungen hatte ich dann bemerkt, dass ich vielfach bei den selben Themen
 Am 05.12.2023 konnte ich dann die Zertifizierung erfolgreich abschliessen.
 [AWS Certified Cloud Practitioner certificate](./picture/AWS%20Certified%20Cloud%20Practitioner%20certificate.png)
 
-Nach der Einarbeitung in die AWS SDK habe ich mich entschieden, sämtliche automatisierungen mittels boto3 (Python) abzuwickeln. Somit habe ich die bestehenden AWS CLI Bash Scripts aus dem Sprint 1 auch gleich umgeschrieben. 
-Die Automatisierung via Boto3 hat sich jedoch aufwändiger herausgestellt, als erwartet.
-So waren die Abhängigkeiten zwischen LambdaFunction, Roles, Policy, CodeBuild nicht einfach zu verstehen.
-Den grössten Aufwand hatte ich mit der automatisierung von CodeBuild. Anhand der Dokumentation war mir nicht klar, welche Werte zwingende notwending sind und wie diese abgefüllt werden. Was mir geholfen hat, war das erstellen via Gui und einen anschliessender Export in ein json File.
-Dass der Webhook seperat erstellt werden muss, war mir ebenfalls nicht klar und hat mich viel Zeit gekostest.
+Nachdem ich mich in das AWS SDK eingearbeitet hatte, entschied ich mich dazu, sämtliche Automatisierungen mit Hilfe von boto3 (Python) durchzuführen. Daher habe ich die bestehenden AWS CLI Bash-Scripts aus dem Sprint 1 direkt umgeschrieben.
 
-Dieser Sprint war sehr lehrreich in Bezug auf das Deployment mittels CodeBuild und Github.
+Die Automatisierung mittels Boto3 gestaltete sich jedoch aufwändiger als erwartet, insbesondere aufgrund der komplexen Abhängigkeiten zwischen Lambda-Funktionen, Rollen, Richtlinien und CodeBuild. Besonders herausfordernd war die Implementierung der CodeBuild-Automatisierung. Die Dokumentation allein lieferte nicht ausreichend Klarheit darüber, welche Werte zwingend erforderlich sind und wie sie korrekt eingefügt werden müssen. In diesem Zusammenhang war es hilfreich, die Erstellung über die grafische Benutzeroberfläche durchzuführen und die Konfiguration anschließend in eine JSON-Datei zu exportieren.
 
+Dieser Sprint war äusserst lehrreich im Kontext des Deployments mithilfe von CodeBuild und GitHub. In CodeBuild wird die Source (GitHub), das Container-Image für die Verarbeitung sowie die zu berücksichtigenden Ereignisse (Webhook) festgelegt. Eine interessante Option besteht darin, dass neben dem Ereignis (Push) auch Abhängigkeiten zur Commit-Nachricht definiert werden können. Auf diese Weise können für das Deployment spezifische Abhängigkeiten zwischen dem Ereignis und der Nachricht festgelegt werden.
+Zusätzlich müssen die entsprechenden Berechtigungen (Policy/Role) vorhanden sein.
 
+Aus den Erkenntnissen aus diesem Sprint, würde ich heute den IaaC Teil direkt mit boto3 umsetzten.
+Des Weiteren war die Zwei-Faktor-Authentifizierung über Microsoft Authenticator für AWS und GitHub eher lästig. Daher habe ich mich entschieden, zwei YubiKeys ([yubikey-5c-nano](https://www.yubico.com/ch/product/yubikey-5c-nano/) / [yubikey-5c-nfc](https://www.yubico.com/ch/product/yubikey-5c-nfc/)) anzuschaffen. Nach der Registrierung gestaltet sich die Anmeldung äußerst entspannt. Diese Schlüssel können zudem für verschiedene Online-Anwendungen genutzt werden.
 
+In diesem Sprint wurde mir klar, dass ich zusätzliche AWS-Komponenten benötige (API Gateway), damit die Funktion über das Web erreichbar ist. Dies bedeutet, dass im Sprint 3 weiterhin Zeit für die Infrastruktur als Code (IaaC)-Umsetzung investiert werden muss, und mir daher die Zeit für die Entwicklung von Functions as a Service (FaaS) fehlt. Es würde ein zusätlichner Issue für den Sprint 3 erfasst [AWS API Gateway](https://github.com/blro-ep/ITCNE23-SEM-II/issues/16).
 
+Trotz dieser Herausforderung habe ich mich dazu entschieden, den Fokus auf die IaaC zu legen und den FaaS-Teil so einfach wie möglich zu halten.
 
 #### Sprint 3 - 31.01.24
 
