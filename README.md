@@ -117,13 +117,16 @@ Die Erstellung von Rollen mithilfe der AWS CLI verläuft reibungslos und bildet 
 Die Automatisierung mittels AWS CLI wird weiterhin beibehalten.
 
 #### Sprint 2 - 18.12.23
+![Sprint 2](./picture/sprint-2.png)
 
+**WS Certified Cloud Practitioner**
 Die Zertifizierung zum AWS Certified Cloud Practitioner hat mehr Zeit in Anspruch genommen als geplant.
 Nachdem der erste Zertifizerungsversuche gescheiter war, habe ich mich mit folgenden Udemy Kursen auf die Prüfung vorbereitet [Ultimate AWS Certified Cloud Practitioner CLF-C02](https://www.udemy.com/share/103aFP3@TVzIE-KAghw3WT8BwYR3Eeg8C2WlORvf5_H3--T_a0D-fd6zdpe-7h2Lqm8TlU_vlw==/) / [6 Practice Exams | AWS Certified Cloud Practitioner CLF-C02](https://www.udemy.com/share/103e7s3@dO3_bmtPGRwYUTRlrmP7w7rLxmDDnp7NST5OVyaZiPfK12O_qLlovBH81VjxB8tEdQ==/).
 Bei den Übungen hatte ich dann bemerkt, dass ich vielfach bei den selben Themen immer wieder Probleme hatte. Somit habe mir mittels [Anki](https://apps.ankiweb.net/) eine quelloffene Lernkartei-Software installerit und diese Punkte so zusätliche gelernt. 
 Am 05.12.2023 konnte ich dann die Zertifizierung erfolgreich abschliessen.
 [AWS Certified Cloud Practitioner certificate](./picture/AWS%20Certified%20Cloud%20Practitioner%20certificate.png)
 
+**IaC**
 Nachdem ich mich in das AWS SDK eingearbeitet hatte, entschied ich mich dazu, sämtliche Automatisierungen mit Hilfe von boto3 (Python) durchzuführen. Daher habe ich die bestehenden AWS CLI Bash-Scripts aus dem Sprint 1 direkt umgeschrieben.
 
 Die Automatisierung mittels Boto3 gestaltete sich jedoch aufwändiger als erwartet, insbesondere aufgrund der komplexen Abhängigkeiten zwischen Lambda-Funktionen, Rollen, Richtlinien und CodeBuild. Besonders herausfordernd war die Implementierung der CodeBuild-Automatisierung. Die Dokumentation allein lieferte nicht ausreichend Klarheit darüber, welche Werte zwingend erforderlich sind und wie sie korrekt eingefügt werden müssen. In diesem Zusammenhang war es hilfreich, die Erstellung über die grafische Benutzeroberfläche durchzuführen und die Konfiguration anschließend in eine JSON-Datei zu exportieren.
@@ -131,12 +134,13 @@ Die Automatisierung mittels Boto3 gestaltete sich jedoch aufwändiger als erwart
 Dieser Sprint war äusserst lehrreich im Kontext des Deployments mithilfe von CodeBuild und GitHub. In CodeBuild wird die Source (GitHub), das Container-Image für die Verarbeitung sowie die zu berücksichtigenden Ereignisse (Webhook) festgelegt. Eine interessante Option besteht darin, dass neben dem Ereignis (Push) auch Abhängigkeiten zur Commit-Nachricht definiert werden können. Auf diese Weise können für das Deployment spezifische Abhängigkeiten zwischen dem Ereignis und der Nachricht festgelegt werden.
 Zusätzlich müssen die entsprechenden Berechtigungen (Policy/Role) vorhanden sein.
 
-Aus den Erkenntnissen aus diesem Sprint, würde ich heute den IaaC Teil direkt mit boto3 umsetzten.
+Aus den Erkenntnissen aus diesem Sprint, würde ich heute den IaC Teil direkt mit boto3 umsetzten.
 Des Weiteren war die Zwei-Faktor-Authentifizierung über Microsoft Authenticator für AWS und GitHub eher lästig. Daher habe ich mich entschieden, zwei YubiKeys ([yubikey-5c-nano](https://www.yubico.com/ch/product/yubikey-5c-nano/) / [yubikey-5c-nfc](https://www.yubico.com/ch/product/yubikey-5c-nfc/)) anzuschaffen. Nach der Registrierung gestaltet sich die Anmeldung äußerst entspannt. Diese Schlüssel können zudem für verschiedene Online-Anwendungen genutzt werden.
 
-In diesem Sprint wurde mir klar, dass ich zusätzliche AWS-Komponenten benötige (API Gateway), damit die Funktion über das Web erreichbar ist. Dies bedeutet, dass im Sprint 3 weiterhin Zeit für die Infrastruktur als Code (IaaC)-Umsetzung investiert werden muss, und mir daher die Zeit für die Entwicklung von Functions as a Service (FaaS) fehlt. Es würde ein zusätlichner Issue für den Sprint 3 erfasst [AWS API Gateway](https://github.com/blro-ep/ITCNE23-SEM-II/issues/16).
+**FaaC**
+In diesem Sprint wurde mir klar, dass ich zusätzliche AWS-Komponenten benötige (API Gateway), damit die Function via Web erreichbar ist. Dies bedeutet, dass im Sprint 3 weiterhin Zeit für die Infrastruktur als Code (IaC)-Umsetzung investiert werden muss, und mir daher die Zeit für die Entwicklung von Functions as a Service (FaaS) fehlt. Es würde ein zusätlichner Issue für den Sprint 3 erfasst [AWS API Gateway](https://github.com/blro-ep/ITCNE23-SEM-II/issues/16).
 
-Trotz dieser Herausforderung habe ich mich dazu entschieden, den Fokus auf die IaaC zu legen und den FaaS-Teil so einfach wie möglich zu halten.
+Trotz dieser Herausforderung habe ich mich dazu entschieden, den Fokus auf die IaC zu legen und den FaaS-Teil so einfach wie möglich zu halten.
 
 #### Sprint 3 - 31.01.24
 
