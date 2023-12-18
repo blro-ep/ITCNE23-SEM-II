@@ -5,7 +5,7 @@ client = boto3.client('apigateway')
 
 
 response = client.get_rest_api(
-    restApiId='sogskkimf5'
+    restApiId='wkljfzw5ng'
 )
 
 print(response)
