@@ -9,7 +9,6 @@ response = client.create_rest_api(
     binaryMediaTypes=[
         'string',
     ],
-    minimumCompressionSize=123,
     apiKeySource='HEADER',
     endpointConfiguration={
         'types': [

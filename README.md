@@ -158,37 +158,22 @@ Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung
 ### Boto3
 Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von foldender AWS Dokumentation installiert [boto3.amazonaws.com - quickstart](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html).
 
-#### Dokumentation
-Folgende AWS Dokumentationen liefert gute [Code examples for SDK for Python](https://docs.aws.amazon.com/code-library/latest/ug/python_3_code_examples.html). Des weitern sind auch interessante Informationen unter [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/1.16.36/reference/services/index.html) zu finden.
+## AWS Komponenten
+
+### IAM
+- [iam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html)
 
 
-#### AWS Komponenten
-
-##### Role
-
-
-###### Policy
+### Lambda
+- [lambda](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html)
 
 
-##### Function
+### CodeBuild
+- [codebuild](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html)
 
 
-##### CodeBuild
-
-
-## Infrastructure as code
-### AWS Lambda Function erstellen
-- [Lmabda AWS CLI](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html)
-- [python_3_lambda_code_examples](https://docs.aws.amazon.com/code-library/latest/ug/python_3_lambda_code_examples.html)
-
-### AWS Code Build Project erstellen
-- [create-project-cli](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html)
-
-### AWS API Gateway erstellen
-
-## CI / CD Pipeline
-
-## FaaS
+### API Gateway
+- [apigateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html)
 
 ## Testing
 
