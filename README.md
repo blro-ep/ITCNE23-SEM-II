@@ -1,22 +1,28 @@
 # ITCNE23-SEM-II
 
 ## Einleitung
-Der Focus der Semesterarbeit liegt beim Knowhowaufbau CI/CD Pipeline mit AWS.
-Es soll eine CI/CD Pipeline Aufgebaut werden, welche mittels Git eine Lambda Function updaten kann. Mittels Git PUSH soll AWS CodeBuild angestossen werden, welches das Deployment der Lambda Function übernimmt. 
-Die Function soll als REST API via Web erreichbar sein.
+Die zentrale Ausrichtung der Semesterarbeit konzentriert sich auf den Aufbau von Know-how im Bereich der Continuous Integration/Continuous Deployment (CI/CD) Pipeline unter Verwendung von AWS (Amazon Web Services). Das Ziel besteht darin, eine effiziente CI/CD-Pipeline zu erstellen, die in der Lage ist, eine Lambda-Funktion mithilfe von Git-Operationen zu aktualisieren. Der gesamte Prozess wird durch einen Git-PUSH ausgelöst, der wiederum AWS CodeBuild in Gang setzt. AWS CodeBuild übernimmt dabei das Deployment der aktualisierten Lambda-Funktion.
+
+Die Lambda-Funktion, die Gegenstand dieser Pipeline ist, soll als REST API über das Web zugänglich sein. Dies bedeutet, dass die Funktionalität der Lambda-Funktion über HTTP-Anfragen erreichbar sein wird.
+
+Der gesamte Ablauf beginnt mit Änderungen im Git-Repository, die durch einen Git-PUSH ausgelöst werden. Dieses Ereignis dient als Auslöser für AWS CodeBuild, das den Build-Prozess initiiert und sicherstellt, dass alle erforderlichen Abhängigkeiten und Ressourcen korrekt verarbeitet werden. Nach einem erfolgreichen Build übernimmt AWS CodeBuild das Deployment der Lambda-Funktion in der AWS-Infrastruktur.
+
+Um sicherzustellen, dass die Lambda-Funktion als REST API über das Web zugänglich ist, wird das AWS API Gateway eingesetzt. Dies umfasst die Konfiguration von Endpunkten sowie die Implementierung von Sicherheitsmaßnahmen, um eine nahtlose und sichere Kommunikation mit der Lambda-Funktion zu gewährleisten. Das AWS API Gateway spielt dabei eine zentrale Rolle, indem es als Schnittstelle zwischen externen Anfragen und der Lambda-Funktion fungiert.
 
 ## Projektmanagement
-Als Projektmanagementmethode wird Kanban eingesetzt. Ich habe mich für diese agile Methode entschieden, um die Arbeitsprozesse zu visualisieren und den Arbeitsfluss zu steuern. 
-Die Semsterarbeit soll in mehreren Iteration (Sprints) aufgeteilt werden um den Vorschritt zu tracken.
+Die gewählte Projektmanagementmethode für diese Semesterarbeit ist Kanban, eine agile Arbeitsmethode, die darauf abzielt, Arbeitsprozesse zu visualisieren und den Arbeitsfluss effektiv zu steuern. Die Entscheidung für Kanban basiert auf der Flexibilität und Anpassungsfähigkeit, die diese Methode bietet, insbesondere im Hinblick auf die Dynamik von Forschungsprojekten und Semesterarbeiten.
 
-Das gesamte Projektmangement wird in einem Github Project abgewickelt ([ITCNE23-SEM-II
-](https://github.com/users/blro-ep/projects/6)).
+Um die Semesterarbeit effektiv zu verwalten, wird sie in mehrere Iterationen, auch als Sprints bekannt, unterteilt. Diese Sprints dienen dazu, den Fortschritt der Arbeit zu verfolgen, klare Ziele für bestimmte Zeiträume zu setzen und regelmäßige Überprüfungen durchzuführen. Die Aufgaben werden entsprechend priorisiert und in die Kanban-Board-Phasen wie "To-Do", "In Progress" und "Done" einsortiert, um einen klaren Überblick über den Projektstatus zu gewährleisten.
+
+Für das Gesamtprojektmanagement wird ein Github Project verwendet ([ITCNE23-SEM-II](https://github.com/users/blro-ep/projects/6)). Github Project ermöglicht eine integrierte und kollaborative Verwaltung von Aufgaben, Issues und Milestones. Hier können nicht nur die Kanban-Boards erstellt werden, sondern auch die Fortschritte dokumentiert, Diskussionen geführt und notwendige Ressourcen bereitgestellt werden. Diese zentrale Plattform fördert die Zusammenarbeit und erleichtert die Nachverfolgung von Änderungen.
 
 ### Kanbanboard
-Die Visualisierung erfolgt in einem Kanbanboard. Daruch soll der Arbeitsfluss optimiert und die Effizeinz geteigert werden. Engpässe können damit identifiziert und entprechende Manssnahmen abgeleitet werden.
+Die Visualisierung der Arbeitsprozesse erfolgt auf einem Kanban-Board, das als zentrales Instrument für das Projektmanagement dient. Durch die Nutzung dieses Kanban-Boards wird nicht nur eine übersichtliche Darstellung sämtlicher Aufgaben ermöglicht, sondern auch das Ziel verfolgt, den Arbeitsfluss zu optimieren und die Gesamteffizienz des Projekts zu steigern.
+Dies fördert nicht nur eine konsequente Arbeitsweise, sondern erleichtert auch die schnelle Identifikation von Engpässen und Bottlenecks im Arbeitsfluss.
+Die effektive Nutzung dieses visuellen Instruments bildet somit einen wesentlichen Beitrag zur erfolgreichen Umsetzung der Semesterarbeit und ermöglicht eine flexible Anpassung an sich verändernde Anforderungen während des gesamten Projektablaufs.
 
 ### Roadmap
-Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufgaben werden einen Sprint zugeordnet.
+Die strategische Planung und Steuerung der Semesterarbeit erfolgt durch eine ausgearbeitete Roadmap, die wichtige Meilensteine enthält. Diese Meilensteine sind auf die einzelnen Sprints abgestimmt und dienen als Orientierungspunkte für die Fortschrittsverfolgung und den erfolgreichen Abschluss der einzelnen Etappen des Projekts.
 
 ![Roadmap](picture/roadmap.png)
 
@@ -27,7 +33,9 @@ Die Roadmap enthält Milestones, welche den Sprints entsprechen. Sämtliche Aufg
 | 31.01.24 | Ergebnis 3. Sprint / Abgabe / Abnahem |
 
 ### Tasklist
-Die Taskliste soll eine einfache möglichkeit bieten, um die Aufgaben nach Kategorien zu filtern.
+Um die Verwaltung und Organisation der Aufgaben weiter zu optimieren, wird eine Taskliste erstellt. Die Taskliste dient dazu, die Aufgaben zu erfassen, Aufgaben nach verschiedenen Kategorien zu filtern und zu gruppieren. Ziel ist, eine höhere Übersichtlichkeit und Strukturierung innerhalb des Projektmanagements zu gewährleisten.
+
+Die Taskliste wird so gestaltet, dass jeder Task mit spezifischen Metadaten versehen werden kann, die eine einfache Zuordnung zu bestimmten Kategorien ermöglichen. 
 
 #### Task Kategorien
 - Status
@@ -77,12 +85,8 @@ Das Deploment soll von Github angestossen werden und mitteld CodeBuild automatis
 Es ist zu prüfen, welche AWS Services für die Vorgehen zusätlich benötigt werden.
 
 ##### Github
-Github wird für das Projektmanagent eingesetzt. Anhand von einem Github Project, wird die Semsterarbeit in Task aufgeteilt, welche innerhalb eines Sprint abgearbeitet werden.
-
-Im Github Repository befindet sich der gesamte Code der Semserarbeit.
-Diese Repository wird ebenfalls verwendet, um die Lambda Function mittels git Push zu aktualisieren.
-
-[ITCNE23-SEM-II]{https://github.com/blro-ep/ITCNE23-SEM-II#project-management}
+Das GitHub Repository fungiert als zentraler Speicherort für den gesamten Code der Semesterarbeit. Hier werden sämtliche Ressourcen, Skripte und Konfigurationen verwaltet. 
+Zusätzlich dient das Repository als Schnittstelle für das Aktualisieren der Lambda-Funktion. Durch das Auslösen eines Git-Push-Vorgangs werden die Änderungen an der Lambda-Funktion automatisch übernommen.
 
 ##### Entwicklungsumgebung
 Distributor ID: Ubuntu
@@ -102,15 +106,15 @@ Codename:	    jammy
 - Mittels GET API Request soll die Function mindestens den Status Code 200 zurück geben.
 
 ### Sprints
-Am Ende eines Sprints erfolgt eine Reflektion, wobei der Status der Taskliste grafisch festgehalten wird.
+Nach Abschluss eines Sprints wird eine Reflektion durchgeführt, die einen entscheidenden Bestandteil des agilen Projektmanagements darstellt. In diesem Prozess werden nicht nur die erreichten Fortschritte betrachtet, sondern auch Herausforderungen, Erfahrungen und mögliche Verbesserungspotenziale identifiziert. Ein zentrales Element dieser Reflexion ist die grafische Festhaltung des Status der Taskliste, was dazu dient, einen klaren Überblick über den Sprint-Verlauf zu erhalten.
 
 #### Sprint 1 - 27.11.23
 ![Sprint 1](./picture/sprint-1.png)
 
 ##### Reflektion
-Die von GitHub bereitgestellten Tools für das Projektmanagement erweisen sich als äußerst effektiv. Die einfache Erstellung von Kanban-Boards, Roadmaps und Aufgabenlisten ermöglicht einen klaren Überblick über den Projektstatus.
+Die von GitHub bereitgestellten Projektmanagement-Tools erweisen sich als äußerst wirkungsvoll. Die unkomplizierte Erstellung von Kanban-Boards, Roadmaps und Aufgabenlisten ermöglicht einen klaren und schnellen Überblick über den aktuellen Projektstatus.
 
-Die Projektdokumentation ist in einem Readme festgehalten. Die bewusste Entscheidung, auf die manuelle Erstellung eines Inhaltsverzeichnisses zu verzichten, beruht darauf, dass GitHub standardmäßig diese Funktion bereitstellt.
+Die Projektdokumentation wurde übersichtlich im Readme-Dateiformat festgehalten. Die bewusste Entscheidung, auf die manuelle Erstellung eines Inhaltsverzeichnisses zu verzichten, hat sich als effektiv erwiesen. Dies liegt daran, dass GitHub standardmäßig über diese Funktion verfügt und somit eine klare und strukturierte Navigation innerhalb der Dokumentation ermöglicht.
 
 Die Erstellung von Rollen mithilfe der AWS CLI verläuft reibungslos und bildet die Grundlage für die automatisierte Erstellung der Lambda-Funktion. Die Unterscheidung, ob eine Rolle nicht existiert oder die Abfrage ein Problem aufweist, gestaltete sich aufwändiger als ursprünglich angenommen.
 
