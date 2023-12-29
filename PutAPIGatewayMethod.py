@@ -31,26 +31,26 @@ put_integration = client.put_integration(
     restApiId='1f2z000xlb',
     resourceId='imlcwk',
     httpMethod='GET',
-    type='AWS',
+    type='AWS_PROXY',
     integrationHttpMethod='POST',
     uri=arn_uri,
     credentials='arn:aws:iam::931054186430:role/SemLambdaExecute',
     requestTemplates={
-      "application/json":"{\"greeter\":\"$input.params('greeter')\"}"
+      "application/json":"application/json': None{application/json': None\"application/json': Nonegreeter\":\"$input.params('greeter')\"}"
     },
   )
 
 print(put_integration)
 
-#put_integration_response = client.put_integration_response(
-#    restApiId='1f2z000xlb',
-#    resourceId='imlcwk',
-#    httpMethod='GET',
-#    statusCode='200',
-#    selectionPattern=''
-#  )
+put_integration_response = client.put_integration_response(
+    restApiId='1f2z000xlb',
+    resourceId='imlcwk',
+    httpMethod='GET',
+    statusCode='200',
+    selectionPattern=''
+  )
 
-#print(put_integration_response)
+print(put_integration_response)
 
 
 deployment = client.create_deployment(
