@@ -4,7 +4,7 @@ import boto3
 client = boto3.client('apigateway')
 
 response = client.create_resource(
-    restApiId='1f2z000xlb',
-    parentId='oorohba1t8',
+    restApiId='twysok44ge',
+    parentId='vagcsr2aqj',
     pathPart='SemResource'
 )
