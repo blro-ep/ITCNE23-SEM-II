@@ -154,7 +154,6 @@ Als züstzliche Unterstützung habe ich das Udemy Learining [az900-azure](https:
 Die Prüfung wurde am 29.12.2023 erfolgreich absolviert [Microsoft Certified: Azure Fundamentals](https://learn.microsoft.com/api/credentials/share/en-us/RogerBlum-7482/25F3FCE9EAE61434?sharingId=965F21179058A5EF).
 
 
-
 ## Installation
 
 ### AWS CLI
