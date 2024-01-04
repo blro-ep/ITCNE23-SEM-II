@@ -179,6 +179,21 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 ### API Gateway
 - [apigateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html)
 
+## Build Details
+- Role muss vorhanden sein (Script noch nicht vorhanden)
+- Lambda Role erstellen (CreateLambdaRole.py)
+- Lambda Function erstellen (CreateLambdaFuction.py)
+- CodeBuild Policy erstellen (CreateCodeBuildPolicy.py)
+- CodeBuild Role erstellen (CreateCodeBuildRole.py)
+- CodeBuild Project erstellen (CreateCodeBuildProject.py)
+- CodeBuild Webhook erstellen (CreateCodeBuildWebhook.py)
+- APIGateway erstellen (CreateAPIGateway.py)
+- APIGateway Resource zufügen (CreateAPIGatewayResource.py)
+- APIGateway Methode zufügen (PutAPIGatewayMethod.py)
+- Lambda Permisson hinzufügen (AddLambdaPermission.py)
+
+
+
 ## Testing
 
 ## Fazit

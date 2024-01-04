@@ -8,8 +8,8 @@ response = client.add_permission(
     FunctionName='SemLambdaFunction',
     Principal='apigateway.amazonaws.com',
     SourceAccount='931054186430',
-    SourceArn='arn:aws:execute-api:eu-central-2:931054186430:k175zwalyj/*/GET/',
-    StatementId='test-20240103-2',
+    SourceArn='arn:aws:execute-api:eu-central-2:931054186430:l1cp96jaq3/*/GET/SemResource',
+    StatementId='SemLambdaPermisson',
 )
 
 print(response)

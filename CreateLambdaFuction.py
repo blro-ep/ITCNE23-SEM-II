@@ -4,6 +4,8 @@ import json
 import os
 import zipfile
 
+lambda_function_name="SemLambdaFunction"
+
 
 # Dateiname der zu zipenden Datei
 file_to_zip = 'SemLambdaFunction.py'
