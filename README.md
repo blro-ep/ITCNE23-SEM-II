@@ -199,21 +199,25 @@ Die Testaktivit채ten umfassen die Verwendung der AWS-Konsole sowie das Testing �
 ### AWS-Konsole
 #### Lambda
 Nach dem Deployment kann die Funktionalit채t der Lambda-Funktion mithilfe der Standard-Testfunktion 체berpr체ft werden. Diese ist wie folgt zu finden.
+
 ![TestingLambdaFunction-1](./picture/TestingLambdaFunction-1.png)
 ![TestingLambdaFunction-2](./picture/TestingLambdaFunction-2.png)
 
 #### CodeBuild
 Nach dem Deployment kann CodeBuild durch einen GitHub-Commit getestet werden. Nach dem Commit wird der Build Run gestartet, und die einzelnen Schritte sind in den Phase Details ersichtlich.
+
 ![TestingCodeBuild-1](./picture/TestingCodeBuild-1.png)
 ![TestingCodeBuild-2](./picture/TestingCodeBuild-2.png)
 
 #### API Gateway
 Nach dem Deployment kann  API Gateway mithilfe der Standardfunktion 체berpr체ft werden.
+
 ![TestingAPIGateway-1](./picture/TestingAPIGateway-1.png)
 ![TestingAPIGateway-2](./picture/TestingAPIGateway-2.png)
 
 ### Postman
 Die Lambda-Funktion kann extern 체ber Postman getestet werden, wof체r die Invoke-URL der AWS API Gateway Stages erforderlich ist.
+
 ![TestingPostmanInvokeURL](./picture/TestingPostmanInvokeURL.png)
 ![TestingPostmanCheck](./picture/TestingPostmanCheck.png)
 
