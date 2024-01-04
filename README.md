@@ -154,6 +154,7 @@ Als züstzliche Unterstützung habe ich das Udemy Learining [az900-azure](https:
 Die Prüfung wurde am 29.12.2023 erfolgreich absolviert [Microsoft Certified: Azure Fundamentals](https://learn.microsoft.com/api/credentials/share/en-us/RogerBlum-7482/25F3FCE9EAE61434?sharingId=965F21179058A5EF).
 
 
+
 ## Installation
 
 ### AWS CLI
@@ -192,8 +193,28 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 - APIGateway Methode zufügen (PutAPIGatewayMethod.py)
 - Lambda Permisson hinzufügen (AddLambdaPermission.py)
 
-
-
 ## Testing
+Die Testaktivitäten umfassen die Verwendung der AWS-Konsole sowie das Testing über das Internet mithilfe von Postman.
+
+### AWS-Konsole
+#### Lambda
+Nach dem Deployment kann die Funktionalität der Lambda-Funktion mithilfe der Standard-Testfunktion überprüft werden. Diese ist wie folgt zu finden.
+[TestingLambdaFunction-1](./picture/TestingLambdaFunction-1.png)
+[TestingLambdaFunction-2](./picture/TestingLambdaFunction-2.png)
+
+#### CodeBuild
+Nach dem Deployment kann CodeBuild durch einen GitHub-Commit getestet werden. Nach dem Commit wird der Build Run gestartet, und die einzelnen Schritte sind in den Phase Details ersichtlich.
+[TestingCodeBuild-1](./picture/TestingCodeBuild-1.png)
+[TestingCodeBuild-2](./picture/TestingCodeBuild-2.png)
+
+#### API Gateway
+Nach dem Deployment kann  API Gateway mithilfe der Standardfunktion überprüft werden.
+[TestingAPIGateway-1](./picture/TestingAPIGateway-1.png)
+[TestingAPIGateway-2](./picture/TestingAPIGateway-2.png)
+
+### Postman
+Die Lambda-Funktion kann extern über Postman getestet werden, wofür die Invoke-URL der AWS API Gateway Stages erforderlich ist.
+[TestingPostmanInvokeURL](./picture/TestingPostmanInvokeURL.png)
+[TestingPostmanCheck](./picture/TestingPostmanCheck.png)
 
 ## Fazit
