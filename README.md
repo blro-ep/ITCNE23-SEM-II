@@ -180,6 +180,8 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 - [apigateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html)
 
 ## Build Details
+Für das Deployment der CI/CD-Pipeline wurden mehrere Python-Skripte erstellt, die über ein zentrales Skript ausgeführt werden. Dieses zentrale Skript ist verantwortlich für die Erstellung sämtlicher erforderlicher AWS-Komponenten.
+
 - Lambda Role erstellen (CreateLambdaRole.py)
 - Lambda Function erstellen (CreateLambdaFuction.py)
 - CodeBuild Policy erstellen (CreateCodeBuildPolicy.py)
@@ -218,5 +220,8 @@ Die Lambda-Funktion kann extern über Postman getestet werden, wofür die Invoke
 
 ![TestingPostmanInvokeURL](./picture/TestingPostmanInvokeURL.png)
 ![TestingPostmanCheck](./picture/TestingPostmanCheck.png)
+
+### Testprotokoll
+
 
 ## Fazit
