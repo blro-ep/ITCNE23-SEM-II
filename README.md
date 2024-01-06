@@ -180,7 +180,6 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 - [apigateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html)
 
 ## Build Details
-- Role muss vorhanden sein (Script noch nicht vorhanden)
 - Lambda Role erstellen (CreateLambdaRole.py)
 - Lambda Function erstellen (CreateLambdaFuction.py)
 - CodeBuild Policy erstellen (CreateCodeBuildPolicy.py)

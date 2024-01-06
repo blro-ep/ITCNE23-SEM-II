@@ -1,20 +1,28 @@
 #!/usr/bin/python3.10
 import boto3
+import botocore
 
 client = boto3.client('codebuild')
 
-response = client.create_webhook(
-    projectName='SEM-TEST-5',
-    filterGroups=[
-        [
-            {
-                'type': 'EVENT',
-                'pattern': 'PUSH',
-                'excludeMatchedPattern': False
-            },
-        ],
-    ],
-    buildType='BUILD'
-)
+PROJECT_NAME="SemCodeBuildProject"
 
-print(response)
+try:
+    response = client.create_webhook(
+        projectName=PROJECT_NAME,
+        filterGroups=[
+            [
+                {
+                    'type': 'EVENT',
+                    'pattern': 'PUSH',
+                    'excludeMatchedPattern': False
+                },
+            ],
+        ],
+        buildType='BUILD'
+    )
+
+except botocore.exceptions.ClientError as err:
+    print(format(err.response['Error']['Message']))
+
+else: 
+    print(f'Webhook wurde dem "{PROJECT_NAME}" erfolgreich zugefügt.')

@@ -4,40 +4,39 @@ import json
 import os
 import zipfile
 
-lambda_function_name="SemLambdaFunction"
-
-
-# Dateiname der zu zipenden Datei
-file_to_zip = 'SemLambdaFunction.py'
+LAMBDA_FUNCTION_NAME="SemLambdaFunction"
+IAM_LAMBDA_ROLE="arn:aws:iam::931054186430:role/SemLambdaExecute"
 
 # Name für das ZIP-Archiv
-zip_filename = 'function.zip'
+FUNCTION_ZIP_NAME="function.zip"
+
+# Dateiname der zu zipenden Datei
+FUNCTION_TO_ZIP='SemLambdaFunction.py'
 
 # Überprüfen, ob das ZIP-Archiv bereits existiert
-if os.path.exists(zip_filename):
+if os.path.exists(FUNCTION_ZIP_NAME):
     # ZIP-Archiv löschen
-    os.remove(zip_filename)
-    print(f'ZIP-Archiv "{zip_filename}" wurde gelöscht.')
+    os.remove(FUNCTION_ZIP_NAME)
+    print(f'ZIP-Archiv "{FUNCTION_ZIP_NAME}" wurde gelöscht.')
 
 # ZIP-Archiv erstellen
-with zipfile.ZipFile(zip_filename, 'w') as zip_file:
+with zipfile.ZipFile(FUNCTION_ZIP_NAME, 'w') as zip_file:
     # Die Datei zur ZIP-Datei hinzufügen
-    zip_file.write(file_to_zip, arcname='SemLambdaFunction.py')
+    zip_file.write(FUNCTION_TO_ZIP, arcname=FUNCTION_TO_ZIP)
 
-print(f'ZIP-Archiv "{zip_filename}" erfolgreich erstellt.')
+print(f'ZIP-Archiv "{FUNCTION_ZIP_NAME}" erfolgreich erstellt.')
 
 
 lambda_client = boto3.client('lambda')
 
 # Lambda-Funktion erstellen oder aktualisieren
-with open('function.zip', 'rb') as zip_file:
+with open(FUNCTION_ZIP_NAME, 'rb') as zip_file:
     zipped_code = zip_file.read()
-    function_name = 'SemLambdaFunction'
 
     # Versuche die Lambda-Funktion zu aktualisieren
     try:
         response = lambda_client.update_function_code(
-            FunctionName=function_name,
+            FunctionName=LAMBDA_FUNCTION_NAME,
             ZipFile=zipped_code,
         )
         print(f"Erfolgreich aktualisiert: {response['FunctionArn']}")
@@ -45,14 +44,14 @@ with open('function.zip', 'rb') as zip_file:
     # Wenn die Lambda-Funktion nicht gefunden wird, erstelle eine neue Funktion
     except lambda_client.exceptions.ResourceNotFoundException:
         response = lambda_client.create_function(
-            FunctionName=function_name,
+            FunctionName=LAMBDA_FUNCTION_NAME,
             Runtime='python3.9',
-            Role='arn:aws:iam::931054186430:role/SemLambdaExecute',
+            Role=IAM_LAMBDA_ROLE,
             Handler='SemLambdaFunction.lambda_handler',
             Code={
                 'ZipFile': zipped_code,
             },
-            Description='SEM-II Lambda Fuction',
+            Description='SEM Lambda Function',
         )
         print(f"Erfolgreich erstellt: {response['FunctionArn']}")
 

@@ -2,11 +2,32 @@
 import boto3
 import json
 
-client = boto3.client('codebuild')
+PROJECT_NAME = 'SemCodeBuildProject'
 
-response = client.create_project(
-    name='SEM-TEST-5',
-    description='Test',
+def check_codebuild_project_exists(PROJECT_NAME):
+    client = boto3.client('codebuild')
+
+    try:
+        # Attempt to get information about the project
+        response = client.batch_get_projects(names=[PROJECT_NAME])
+        project_exists = bool(response['projects'])
+        return project_exists
+
+    except client.exceptions.ProjectNotFoundException:
+        # If the project is not found, it does not exist
+        return False
+
+    except Exception as e:
+        # Handle other possible exceptions
+        print(f"Error checking CodeBuild project: {e}")
+        return False
+
+def create_codebuild_project():
+    client = boto3.client('codebuild')
+
+    response = client.create_project(
+    name=PROJECT_NAME,
+    description='SEM-II CodeBuildProject',
     source={
         'type': 'GITHUB',
         'location': 'https://github.com/blro-ep/ITCNE23-SEM-II.git',
@@ -56,4 +77,12 @@ response = client.create_project(
     }
 )
 
-print(response)
+# Check if the project already exists
+if not check_codebuild_project_exists(PROJECT_NAME):
+    # If it doesn't exist, create it
+    create_codebuild_project()
+    print(f'Das CodeBuildProject "{PROJECT_NAME}" wurde erfolgreich erstellt.')
+else:
+    print(f'Das CodeBuildProject "{PROJECT_NAME}" existiert bereits.')
+
+
