@@ -5,9 +5,18 @@ client = boto3.client('apigateway')
 
 
 response = client.get_method(
-    restApiId='wkljfzw5ng',
-    resourceId='4bbw6w',
+    restApiId='3mklarz8cd',
+    resourceId='wzwg527z6a',
     httpMethod='GET'
 )
 
+response = client.get_resources(
+    restApiId='3mklarz8cd',
+    embed=[
+        'get',
+    ]
+)
+
 print(response)
+
+
