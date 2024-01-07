@@ -19,7 +19,7 @@ for ItemAPI in response['items']:
         response = client.get_resources(
             restApiId=getRestApiId
         )
-        getResourceId=response['items'][1]['id']
+        getResourceId=response['items'][0]['id']
 
 
 try:

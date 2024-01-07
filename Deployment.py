@@ -7,7 +7,7 @@ import time
 import subprocess
 
 # Liste der Skriptnamen, die ausgeführt werden sollen
-script_names = ['CreateLambdaRole.py', 'CreateLambdaFuction.py', 'CreateCodeBuildPolicy.py', 'CreateCodeBuildRole.py', 'CreateCodeBuildProject.py', 'CreateCodeBuildWebhook.py', 'CreateAPIGateway.py', 'CreateAPIGatewayResource.py', 'PutAPIGatewayMethod.py', 'AddLambdaPermission.py']
+script_names = ['CreateLambdaRole.py', 'CreateLambdaFuction.py', 'CreateCodeBuildPolicy.py', 'CreateCodeBuildRole.py', 'CreateCodeBuildProject.py', 'CreateCodeBuildWebhook.py', 'CreateAPIGateway.py', 'PutAPIGatewayMethod.py', 'AddLambdaPermission.py']
 
 # Durchlaufe die Liste der Skriptnamen und führe jedes Skript aus
 for script_name in script_names:

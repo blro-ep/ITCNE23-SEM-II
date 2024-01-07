@@ -51,7 +51,7 @@ with open(FUNCTION_ZIP_NAME, 'rb') as zip_file:
             Code={
                 'ZipFile': zipped_code,
             },
-            Description='SEM Lambda Function',
+            Description='SEM-II Lambda Function',
         )
         print(f"Erfolgreich erstellt: {response['FunctionArn']}")
 
