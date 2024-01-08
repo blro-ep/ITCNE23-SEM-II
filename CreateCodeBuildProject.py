@@ -81,8 +81,8 @@ def create_codebuild_project():
 if not check_codebuild_project_exists(PROJECT_NAME):
     # If it doesn't exist, create it
     create_codebuild_project()
-    print(f'Das CodeBuildProject "{PROJECT_NAME}" wurde erfolgreich erstellt.')
+    print(f'CodeBuild Project "{PROJECT_NAME}" created.')
 else:
-    print(f'Das CodeBuildProject "{PROJECT_NAME}" existiert bereits.')
+    print(f'CodeBuild Project "{PROJECT_NAME}" already exist.')
 
 

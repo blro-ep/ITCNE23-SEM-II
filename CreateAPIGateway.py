@@ -40,4 +40,4 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'{API_NAME} erfolgreich zugefügt.')
+    print(f'API Gateway "{API_NAME}" created.')

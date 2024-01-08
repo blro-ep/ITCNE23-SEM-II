@@ -27,11 +27,14 @@ def delete_codebuild_project():
         )
     except botocore.exceptions.ClientError as err:
         print(format(err.response['Error']['Message']))
+    else:
+        print(f'"{PROJECT_NAME}" deleted.')
 
 # Check if the project already exists
 if check_codebuild_project_exists(PROJECT_NAME):
+    
     # If exist, delete it
     delete_codebuild_project()
-    print(f'"{PROJECT_NAME}" erfolgreich gelöscht.')
+
 else:
-    print(f'Das CodeBuildProject "{PROJECT_NAME}" existiert nicht.')
+    print(f'CodeBuildP roject "{PROJECT_NAME}" not exist.')

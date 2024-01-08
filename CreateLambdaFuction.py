@@ -17,15 +17,11 @@ FUNCTION_TO_ZIP='SemLambdaFunction.py'
 if os.path.exists(FUNCTION_ZIP_NAME):
     # ZIP-Archiv löschen
     os.remove(FUNCTION_ZIP_NAME)
-    print(f'ZIP-Archiv "{FUNCTION_ZIP_NAME}" wurde gelöscht.')
 
 # ZIP-Archiv erstellen
 with zipfile.ZipFile(FUNCTION_ZIP_NAME, 'w') as zip_file:
     # Die Datei zur ZIP-Datei hinzufügen
     zip_file.write(FUNCTION_TO_ZIP, arcname=FUNCTION_TO_ZIP)
-
-print(f'ZIP-Archiv "{FUNCTION_ZIP_NAME}" erfolgreich erstellt.')
-
 
 lambda_client = boto3.client('lambda')
 
@@ -39,7 +35,6 @@ with open(FUNCTION_ZIP_NAME, 'rb') as zip_file:
             FunctionName=LAMBDA_FUNCTION_NAME,
             ZipFile=zipped_code,
         )
-        print(f"Erfolgreich aktualisiert: {response['FunctionArn']}")
     
     # Wenn die Lambda-Funktion nicht gefunden wird, erstelle eine neue Funktion
     except lambda_client.exceptions.ResourceNotFoundException:
@@ -53,7 +48,7 @@ with open(FUNCTION_ZIP_NAME, 'rb') as zip_file:
             },
             Description='SEM-II Lambda Function',
         )
-        print(f"Erfolgreich erstellt: {response['FunctionArn']}")
+        print(f'Lambda Function "{LAMBDA_FUNCTION_NAME}" created.')
 
 # Aufräumen: ZIP-Datei schließen
 zip_file.close()

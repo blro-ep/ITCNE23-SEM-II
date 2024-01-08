@@ -38,7 +38,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutMethod "{response["httpMethod"]}" erfolgreich zugefügt.')
+    print(f'PutMethod "{response["httpMethod"]}" added.')
 
 try:
   put_method_res = client.put_method_response(
@@ -52,7 +52,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutMethodResponse "{response["httpMethod"]}" erfolgreich zugefügt.')
+    print(f'PutMethodResponse "{response["httpMethod"]}" added.')
 
 try:
   arn_uri="arn:aws:apigateway:eu-central-2:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-2:931054186430:function:SemLambdaFunction/invocations"
@@ -72,7 +72,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutIntegration erfolgreich zugefügt.')
+    print(f'PutIntegration "POST" added.')
 
 try:
   put_integration_response = client.put_integration_response(
@@ -86,7 +86,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'IngegrationResponse erfolgreich zugefügt.')
+    print(f'IngegrationResponse "GET" added.')
 
 try:
   response = client.create_deployment(
@@ -96,6 +96,3 @@ try:
 
 except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
-
-else: 
-    print(f'Deployment erfolgreich zugefügt.')

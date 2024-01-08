@@ -22,7 +22,6 @@ iam_client = session.client('iam')
 
 # Rolle erstellen, wenn diese noch nicht existiert
 if not check_role_exist(IAM_ROLE_NAME):
-    print("Die Rolle existiert noch nicht. Rolle wird erstellt.")
 
     # Trust-Policy aus Datei laden
     with open(TRUST_POLICY_FILE, 'r') as file:
@@ -40,6 +39,6 @@ if not check_role_exist(IAM_ROLE_NAME):
         PolicyArn='arn:aws:iam::931054186430:policy/SemCodeBuildPolicy'
     )
 
-    print("Die Rolle wurde erfolgreich erstellt.")
+    print(f'CodeBuild Role "{IAM_ROLE_NAME}" created.')
 else:
-    print("Die Rolle existiert bereits.")
+    print(f'CodeBuild Role "{IAM_ROLE_NAME}" already exist.')

@@ -26,10 +26,9 @@ if not policy_exists:
     response = iam.create_policy(
         PolicyName=CODEBUILD_POLICY,
         PolicyDocument=codebuild_policy_document_str,
-        Description='IAM Policy for AWS CodeBuild'
+        Description='SEM-II IAM Policy for AWS CodeBuild'
     )
+    print(f'CodeBuild Policy "{CODEBUILD_POLICY}" created.')
 
-    # Gib die ARN (Amazon Resource Name) der erstellten Richtlinie aus
-    print('Die ARN der erstellten CodeBuild-Richtlinie ist:', response['Policy']['Arn'])
 else:
-    print(f'Die Richtlinie "{CODEBUILD_POLICY}" existiert bereits.')
+    print(f'CodeBuild Policy "{CODEBUILD_POLICY}" already exist.')

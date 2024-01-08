@@ -34,5 +34,5 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'Lambda Permission "{LAMBDA_STATEMENT_ID}" erfolgreich zugefügt.')
+    print(f'Lambda Permission "{LAMBDA_STATEMENT_ID}" added.')
 

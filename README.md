@@ -180,7 +180,10 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 - [apigateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html)
 
 ## Build Details
-Für das Deployment der CI/CD-Pipeline wurden mehrere Python-Skripte erstellt, die über ein zentrales Skript ausgeführt werden. Dieses zentrale Skript ist verantwortlich für die Erstellung sämtlicher erforderlicher AWS-Komponenten.
+Für das Deployment der CI/CD-Pipeline wurden mehrere Python-Skripte erstellt, die über ein zentrales Skript ausgeführt werden. 
+
+### Execute Deployment
+Dieses zentrale Skript ist verantwortlich für die Erstellung sämtlicher erforderlicher AWS-Komponenten.
 
 - Lambda Role erstellen (CreateLambdaRole.py)
 - Lambda Function erstellen (CreateLambdaFuction.py)
@@ -189,9 +192,10 @@ Für das Deployment der CI/CD-Pipeline wurden mehrere Python-Skripte erstellt, d
 - CodeBuild Project erstellen (CreateCodeBuildProject.py)
 - CodeBuild Webhook erstellen (CreateCodeBuildWebhook.py)
 - APIGateway erstellen (CreateAPIGateway.py)
-- APIGateway Resource zufügen (CreateAPIGatewayResource.py)
 - APIGateway Methode zufügen (PutAPIGatewayMethod.py)
 - Lambda Permisson hinzufügen (AddLambdaPermission.py)
+
+### Delete Deployment
 
 ## Testing
 Die Testaktivitäten umfassen die Verwendung der AWS-Konsole sowie das Testing über das Internet mithilfe von Postman.

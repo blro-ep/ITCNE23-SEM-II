@@ -23,7 +23,6 @@ iam_client = session.client('iam')
 
 # Rolle erstellen, wenn diese noch nicht existiert
 if not check_role_exist(IAM_ROLE_NAME):
-    print("Die Role existiert noch nicht. Role wird erstellt.")
 
     # Trust-Policy aus Datei laden
     with open(TRUST_POLICY_FILE, 'r') as file:
@@ -34,19 +33,14 @@ if not check_role_exist(IAM_ROLE_NAME):
         RoleName=IAM_ROLE_NAME,
         AssumeRolePolicyDocument=json.dumps(trust_policy_document)
     )
+    print(f'Role "{IAM_ROLE_NAME}" created.')
 
     # Berechtigung zur Trust-Policy hinzufügen (AWSLambdaBasicExecutionRole)
     iam_client.attach_role_policy(
         RoleName=IAM_ROLE_NAME,
         PolicyArn=IAM_POLICY_ARN
     )
-
-    print("Die Role wurde erfolgreich erstellt.")
+    print(f'TrustPolicy "LambdaTrustPolicy" added to Role "{IAM_ROLE_NAME}".')
     
-    response = iam_client.get_role(
-        RoleName=IAM_ROLE_NAME
-    )
-    print(response['Role']['Arn'])
-
 else:
-    print("Die Role existiert bereits.")
+    print(f'Role "{IAM_ROLE_NAME}" already exists.')
