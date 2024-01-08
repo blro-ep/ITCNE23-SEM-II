@@ -183,19 +183,30 @@ Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von fo
 Für das Deployment der CI/CD-Pipeline wurden mehrere Python-Skripte erstellt, die über ein zentrales Skript ausgeführt werden. 
 
 ### Execute Deployment
-Dieses zentrale Skript ist verantwortlich für die Erstellung sämtlicher erforderlicher AWS-Komponenten.
+Folgendes Skript ist verantwortlich für die Erstellung sämtlicher erforderlicher AWS-Komponenten.
+- [Deployment.py](Deployment.py)
 
-- Lambda Role erstellen (CreateLambdaRole.py)
-- Lambda Function erstellen (CreateLambdaFuction.py)
-- CodeBuild Policy erstellen (CreateCodeBuildPolicy.py)
-- CodeBuild Role erstellen (CreateCodeBuildRole.py)
-- CodeBuild Project erstellen (CreateCodeBuildProject.py)
-- CodeBuild Webhook erstellen (CreateCodeBuildWebhook.py)
-- APIGateway erstellen (CreateAPIGateway.py)
-- APIGateway Methode zufügen (PutAPIGatewayMethod.py)
-- Lambda Permisson hinzufügen (AddLambdaPermission.py)
+Dieses ruft folgende SubScripts auf:
+- [CreateLambdaRole.py](CreateLambdaRole.py)
+- [CreateLambdaFuction.py](CreateLambdaFuction.py)
+- [CreateCodeBuildPolicy.py](CreateCodeBuildPolicy.py)
+- [CreateCodeBuildRole.py](CreateCodeBuildRole.py)
+- [CreateCodeBuildProject.py](CreateCodeBuildProject.py)
+- [CreateCodeBuildWebhook.py](CreateCodeBuildWebhook.py)
+- [CreateAPIGateway.py](CreateAPIGateway.py)
+- [PutAPIGatewayMethod.py](PutAPIGatewayMethod.py)
+- [AddLambdaPermission.py](AddLambdaPermission.py)
 
 ### Delete Deployment
+Folgendes Skript ist verantwortlich für die Löschung der verwendeten AWS-Komponenten.
+- [Deployment_undo.py](Deployment_undo.py)
+
+- [DeleteAPIGateway.py](DeleteAPIGateway.py)
+- [DeleteCodeBuild.py](DeleteCodeBuild.py)
+- [DeleteLambdaFunction.py](DeleteLambdaFunction.py)
+- [DetachIAMPolicyFromRole.py](DetachIAMPolicyFromRole.py)
+- [DeleteIAMPolicy.py](DeleteIAMPolicy.py)
+- [DeleteIAMRole.py](DeleteIAMRole.py)
 
 ## Testing
 Die Testaktivitäten umfassen die Verwendung der AWS-Konsole sowie das Testing über das Internet mithilfe von Postman.

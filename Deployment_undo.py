@@ -5,7 +5,7 @@ import time
 import subprocess
 
 # Liste der Skriptnamen, die ausgeführt werden sollen
-script_names = ['DeleteAPIGateway.py', 'DeleteCodeBuild.py', 'DeleteLambdaFunction.py', 'DetachIAMPolicyFromRole.py', 'DeleteIAMPolicy.py', 'DeleteIAMRole.py', '' ]
+script_names = ['DeleteAPIGateway.py', 'DeleteCodeBuild.py', 'DeleteLambdaFunction.py', 'DetachIAMPolicyFromRole.py', 'DeleteIAMPolicy.py', 'DeleteIAMRole.py' ]
 
 # Durchlaufe die Liste der Skriptnamen und führe jedes Skript aus
 for script_name in script_names:
