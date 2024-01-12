@@ -170,6 +170,9 @@ Für das Testen des gesamten Deployments habe ich ein Löschskript erstellt, das
 
 Der Python-Code hat sicherlich noch Optimierungspotenzial. Zum Beispiel könnte man die Variablen global setzen und zusätzliche Überprüfungen einbauen.
 
+**Beschreibung Deployment**
+Um das Deployment während der Präsentation besser zu erläutern, habe ich mich für ein BPMN Digramm entschieden. BPMN ermöglicht eine rasche und leicht verständliche Darstellung der wichtigsten Schritte.
+Gleichzeitig war es für mich hilfreich, die Abfolge der Prozesse erneut zu überdenken und zu optimieren.
 
 ## Installation
 
