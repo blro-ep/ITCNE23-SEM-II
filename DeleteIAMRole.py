@@ -18,6 +18,4 @@ try:
 except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
-else:
-    print(f'finish')
 

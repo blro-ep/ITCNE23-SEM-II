@@ -19,4 +19,4 @@ for script_name in script_names:
 
     except subprocess.CalledProcessError as e:
         # Behandle den Fehler, wenn das Skript fehlschlägt
-        print(f"Fehler beim Ausführen von {script_name}: {e}")
+        print(f"Error: {script_name}: {e}")
