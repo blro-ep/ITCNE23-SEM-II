@@ -10,7 +10,6 @@ Der gesamte Ablauf beginnt mit Änderungen im Git-Repository, die durch einen Gi
 Um sicherzustellen, dass die Lambda-Funktion als REST API über das Web zugänglich ist, wird das AWS API Gateway eingesetzt. Dies umfasst die Konfiguration von Endpunkten sowie die Implementierung von Sicherheitsmassnahmen, um eine nahtlose und sichere Kommunikation mit der Lambda-Funktion zu gewährleisten. Das AWS API Gateway spielt dabei eine zentrale Rolle, indem es als Schnittstelle zwischen externen Anfragen und der Lambda-Funktion fungiert.
 
 ### Übersicht
-![Alt text](./picture/SEM-II_Overview.drawio.svg)
 <img src="./picture/SEM-II_Overview.drawio.svg">
 
 ## Projektmanagement
@@ -213,7 +212,6 @@ Dieses ruft folgende SubScripts auf:
 - [AddLambdaPermission.py](AddLambdaPermission.py)
 
 #### Übersicht Execute Deployment
-![Alt text](./bpmn/Deployment.svg)
 <img src="./bpmn/Deployment.svg">
 
 ### Undo Deployment
@@ -228,7 +226,6 @@ Folgendes Skript ist verantwortlich für die Löschung der verwendeten AWS-Kompo
 - [DeleteIAMRole.py](DeleteIAMRole.py)
 
 #### Übersicht Undo Depoyment
-![Alt text](./bpmn/Deployment_undo.svg)
 <img src="./bpmn/Deployment_undo.svg">
 
 ## Testing
