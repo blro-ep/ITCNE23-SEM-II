@@ -242,7 +242,7 @@ Die Testaktivitäten umfassen die Verwendung der von lokalen Python-Scripts, AWS
 | TC-05 | AWS ColdeBuild | Prüfen CodeBuild Project | Codebuild Project vorhanden | Infrastructure erstellt | [TC-05](./picture/TestCases/TC-05.png) |
 | TC-06 | AWS API Gateway | Prüfen API Gateway | API Gateway vorhanden | Infrastructure erstellt | [TC-06](./picture/TestCases/TC-06.png) |
 | TC-07 | Github | Github Commit mit Anpassung an Lambda Python Script | Änderung auf Github erfolgreich eingecheckt |  Commit "verified signature" | [TC-07](./picture/TestCases/TC-07.png) |
-| TC-08 | AWS CodeBuild | Prüfen Codebiild | Aufgrund des Commit wurde CodeBuild gestartet | [TC-08](./picture/TestCases/TC-08.png) |
+| TC-08 | AWS CodeBuild | Prüfen Codebiild | Aufgrund des Commit wurde CodeBuild gestartet | Build Status "Succeeded" | [TC-08](./picture/TestCases/TC-08.png) |
 | TC-09 | Postman | Prüfen Lambdas Function | Lambda Fuction aufruf via Postmann möglich | Status Code 200 | [TC-09](./picture/TestCases/TC-09.png) |
 | TC-10 | IaC | Start Deployment undo | Sämtliche Scripts werden ohne Error ausgeführt | AWS Infrastructure gelsöcht (Prüfe TC-02 bis TC-06) | [TC-10](./picture/TestCases/TC-10.png) |
 
