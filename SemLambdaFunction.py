@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     json_function_name = os.environ['AWS_LAMBDA_FUNCTION_NAME']
     json_function_memory = os.environ['AWS_LAMBDA_FUNCTION_MEMORY_SIZ']
     json_function_version = os.environ['AWS_LAMBDA_FUNCTION_VERSION']
-    json_tz = os.environ['TZ']
+
     return {
         "statusCode": 200,
         "headers": {
