@@ -7,8 +7,8 @@ logger.setLevel("INFO")
 def lambda_handler(event, context):
     json_region = os.environ['AWS_REGION']
     json_function_name = os.environ['AWS_LAMBDA_FUNCTION_NAME']
-
-    logger.info(event)
+    json_log = logger.info(event)
+    
 
     return {
         "statusCode": 200,
@@ -17,6 +17,7 @@ def lambda_handler(event, context):
         },
         "body": json.dumps({
             "Region ": json_region,
-            "Lambda Function Name ": json_function_name
+            "Lambda Function Name ": json_function_name,
+            "Log Info ": json_log
         })
     }
