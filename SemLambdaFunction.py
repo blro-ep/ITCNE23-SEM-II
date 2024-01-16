@@ -4,6 +4,7 @@ import json
 def lambda_handler(event, context):
     json_region = os.environ['AWS_REGION']
     json_function_name = os.environ['AWS_LAMBDA_FUNCTION_NAME']
+    json_cpu = os.cpu_count()
     
 
     return {
@@ -14,6 +15,7 @@ def lambda_handler(event, context):
         "body": json.dumps({
             "Region ": json_region,
             "Lambda Function Name ": json_function_name,
-            "TEST ": "1" 
+            "CPU ": json_cpu,
+            "TEST ": "2" 
         })
     }
