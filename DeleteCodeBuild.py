@@ -37,4 +37,4 @@ if check_codebuild_project_exists(PROJECT_NAME):
     delete_codebuild_project()
 
 else:
-    print(f'CodeBuildP roject "{PROJECT_NAME}" not exist.')
+    print(f'CodeBuildProject "{PROJECT_NAME}" not exist.')

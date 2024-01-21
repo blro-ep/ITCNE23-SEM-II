@@ -3,15 +3,27 @@ import boto3
 import json
 import os
 import zipfile
+import configparser
 
-LAMBDA_FUNCTION_NAME="SemLambdaFunction"
-IAM_LAMBDA_ROLE="arn:aws:iam::931054186430:role/SemLambdaExecute"
+# Get configurations from file
+CONFIG_FILE = "Config.ini"
+config = configparser.ConfigParser()
+
+if not os.path.isfile(CONFIG_FILE):
+  print(f'ERROR: Configuration file not found. Exit Script')
+  exit()
+
+config.sections()
+config.read('Config.ini')
+
+LAMBDA_FUNCTION_NAME = config['LAMBDA']['LAMBDA_FUNCTION_NAME']
+IAM_LAMBDA_ROLE = config['IAM']['IAM_ARN'] + config['DEFAULT']['AWS_ACCOUNT_ID'] + ":role/" + config['IAM']['IAM_LAMBDA_ROLE_NAME']
 
 # Name für das ZIP-Archiv
-FUNCTION_ZIP_NAME="function.zip"
+FUNCTION_ZIP_NAME = config['LAMBDA']['LAMBDA_ZIP']
 
 # Dateiname der zu zipenden Datei
-FUNCTION_TO_ZIP='SemLambdaFunction.py'
+FUNCTION_TO_ZIP = config['LAMBDA']['LAMBDA_FILE']
 
 # Überprüfen, ob das ZIP-Archiv bereits existiert
 if os.path.exists(FUNCTION_ZIP_NAME):

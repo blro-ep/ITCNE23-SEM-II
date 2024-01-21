@@ -1,8 +1,21 @@
 import boto3
 import json
+import os
+import configparser
 
-CODEBUILD_POLICY = "SemCodeBuildPolicy"
-CODEBUILD_TRUST_POLICY = "CodeBuildTrustPolicy.json"
+# Get configurations from file
+CONFIG_FILE = "Config.ini"
+config = configparser.ConfigParser()
+
+if not os.path.isfile(CONFIG_FILE):
+  print(f'ERROR: Configuration file not found. Exit Script')
+  exit()
+
+config.sections()
+config.read('Config.ini')
+
+CODEBUILD_POLICY = config['IAM']['IAM_CODEBUILD_POLICY_NAME']
+CODEBUILD_TRUST_POLICY = config['IAM']['IAM_CODEBUILD_TRUST_POLICY_FILE']
 
 # Erstelle eine AWS Identity and Access Management (IAM)-Verbindung
 iam = boto3.client('iam')
@@ -24,9 +37,9 @@ if not policy_exists:
 
     # Erstelle die IAM-Richtlinie für CodeBuild
     response = iam.create_policy(
-        PolicyName=CODEBUILD_POLICY,
-        PolicyDocument=codebuild_policy_document_str,
-        Description='SEM-II IAM Policy for AWS CodeBuild'
+        PolicyName = CODEBUILD_POLICY,
+        PolicyDocument = codebuild_policy_document_str,
+        Description = 'SEM-II IAM Policy for AWS CodeBuild'
     )
     print(f'CodeBuild Policy "{CODEBUILD_POLICY}" created.')
 
