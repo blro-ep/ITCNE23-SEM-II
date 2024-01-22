@@ -14,28 +14,29 @@ if not os.path.isfile(CONFIG_FILE):
 config.sections()
 config.read('Config.ini')
 
+# Variables
 CODEBUILD_POLICY = config['IAM']['IAM_CODEBUILD_POLICY_NAME']
 CODEBUILD_TRUST_POLICY = config['IAM']['IAM_CODEBUILD_TRUST_POLICY_FILE']
 
-# Erstelle eine AWS Identity and Access Management (IAM)-Verbindung
+# create AWS Identity and Access Management
 iam = boto3.client('iam')
 
-# Lese die JSON-Richtlinie aus einer Datei ein
+# read codebuild trust policy
 with open(CODEBUILD_TRUST_POLICY, 'r') as json_file:
     codebuild_policy_document = json.load(json_file)
 
-# Liste vorhandener Richtlinien
+# list existing policies
 existing_policies = iam.list_policies(Scope='Local')
 
-# Überprüfe, ob die gewünschte Richtlinie bereits existiert
+# check if policy already exist
 policy_exists = any(policy['PolicyName'] == CODEBUILD_POLICY for policy in existing_policies['Policies'])
 
-# Wenn die Richtlinie nicht existiert, erstelle sie
+# create policy if not exist
 if not policy_exists:
-    # Konvertiere die JSON-Richtlinie in einen String
+    # converst json in string
     codebuild_policy_document_str = json.dumps(codebuild_policy_document)
 
-    # Erstelle die IAM-Richtlinie für CodeBuild
+    # create plicy
     response = iam.create_policy(
         PolicyName = CODEBUILD_POLICY,
         PolicyDocument = codebuild_policy_document_str,

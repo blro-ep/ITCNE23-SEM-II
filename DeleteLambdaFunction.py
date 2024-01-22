@@ -23,7 +23,7 @@ client = boto3.client('lambda')
 
 try:
     response = client.delete_function(
-        FunctionName=LAMBDA_FUNCTION_NAME
+        FunctionName = LAMBDA_FUNCTION_NAME
     )
 
 except botocore.exceptions.ClientError as err:

@@ -38,7 +38,7 @@ def delete_codebuild_project():
 
     try:
         response = client.delete_project(
-            name=PROJECT_NAME
+            name = PROJECT_NAME
         )
     except botocore.exceptions.ClientError as err:
         print(format(err.response['Error']['Message']))

@@ -25,7 +25,7 @@ client = boto3.client('iam')
 try:
     for delRole in IAM_ROLE:
         response = client.delete_role(
-            RoleName=delRole
+            RoleName = delRole
         )
         print(f'"{delRole}" deleted.')
 

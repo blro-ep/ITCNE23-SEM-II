@@ -27,12 +27,12 @@ client = boto3.client('iam')
 # Detach Policy von der Role
 try:
     response = client.detach_role_policy(
-        RoleName=IAM_ROLE,
-        PolicyArn=IAM_POLICY_ARN
+        RoleName = IAM_ROLE,
+        PolicyArn = IAM_POLICY_ARN
     )
 
     response = client.delete_policy(
-    PolicyArn=IAM_POLICY_ARN
+    PolicyArn = IAM_POLICY_ARN
     )
 
 except botocore.exceptions.ClientError as err:

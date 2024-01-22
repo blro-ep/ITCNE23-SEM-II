@@ -37,18 +37,18 @@ for ItemAPI in response['items']:
 
 try:
     response = client.create_rest_api(
-        name=API_NAME,
-        description='Sem-II API Gateway',
+        name = API_NAME,
+        description = 'Sem-II API Gateway',
         binaryMediaTypes=[
             'string',
         ],
-        apiKeySource='HEADER',
+        apiKeySource = 'HEADER',
         endpointConfiguration={
             'types': [
                 'REGIONAL',
             ]
         },
-        disableExecuteApiEndpoint=False
+        disableExecuteApiEndpoint = False
     )
 
 except botocore.exceptions.ClientError as err:
