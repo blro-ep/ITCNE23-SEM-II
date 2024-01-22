@@ -15,5 +15,12 @@ config.sections()
 config.read('Config.ini')
 
 # Variablen
-LAMBDA_SOURCE_ARN = "arn:aws:execute-api:" + config['DEFAULT']['AWS_REGION'] + ":" + config['DEFAULT']['AWS_ACCOUNT_ID']
-print(LAMBDA_SOURCE_ARN + getRestApiId + '/*/GET/')
+
+test = "test-1"
+test2 = "test-2"
+
+
+
+
+
+print(IAM_ROLE)

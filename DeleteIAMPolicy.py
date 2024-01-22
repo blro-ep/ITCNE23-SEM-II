@@ -2,13 +2,27 @@
 import boto3
 import botocore
 import time
+import os
+import configparser
+
+# Get configurations from file
+CONFIG_FILE = "Config.ini"
+config = configparser.ConfigParser()
+
+if not os.path.isfile(CONFIG_FILE):
+  print(f'ERROR: Configuration file not found. Exit Script')
+  exit()
+
+
+config.sections()
+config.read('Config.ini')
+
+# Variablen
+IAM_ROLE = config['IAM']['IAM_CODEBUILD_ROLE_NAME']
+IAM_POLICY = config['IAM']['IAM_CODEBUILD_POLICY_NAME']
+IAM_POLICY_ARN = config['IAM']['IAM_ARN'] + config['DEFAULT']['AWS_ACCOUNT_ID'] + ":policy/" + config['IAM']['IAM_CODEBUILD_POLICY_NAME']
 
 client = boto3.client('iam')
-
-
-IAM_ROLE="SemBuildProjectRole"
-IAM_POLICY="SemCodeBuildPolicy"
-IAM_POLICY_ARN="arn:aws:iam::931054186430:policy/SemCodeBuildPolicy"
 
 # Detach Policy von der Role
 try:
