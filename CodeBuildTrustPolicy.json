@@ -4,8 +4,8 @@
 		{
 			"Effect": "Allow",
 			"Resource": [
-				"arn:aws:logs:eu-central-2:931054186430:log-group:/aws/codebuild/SemLambdaFunction",
-				"arn:aws:logs:eu-central-2:931054186430:log-group:/aws/codebuild/SemLambdaFunction:*"
+				"arn:aws:logs:xx-xxxxxxx-x:xxxxxxxxxxxx:log-group:/aws/codebuild/xxxxxxxxxxxxxxxxx",
+				"arn:aws:logs:xx-xxxxxxx-x:xxxxxxxxxxxx:log-group:/aws/codebuild/xxxxxxxxxxxxxxxxx:*"
 			],
 			"Action": [
 				"logs:CreateLogGroup",
@@ -27,12 +27,12 @@
 				"lambda:DeleteFunctionConcurrency",
 				"lambda:PublishVersion"
 			],
-			"Resource": "arn:aws:lambda:eu-central-2:931054186430:function:SemLambdaFunction"
+			"Resource": "arn:aws:lambda:xx-xxxxxxx-x:xxxxxxxxxxxx:function:xxxxxxxxxxxxxxxxx"
 		},
 		{
 			"Effect": "Allow",
 			"Resource": [
-				"arn:aws:s3:::codepipeline-eu-central-2-*"
+				"arn:aws:s3:::codepipeline-xx-xxxxxxx-x-*"
 			],
 			"Action": [
 				"s3:PutObject",
@@ -52,7 +52,7 @@
 				"codebuild:BatchPutCodeCoverages"
 			],
 			"Resource": [
-				"arn:aws:codebuild:eu-central-2:931054186430:report-group/SemLambdaFunction-*"
+				"arn:aws:codebuild:xx-xxxxxxx-x:xxxxxxxxxxxx:report-group/xxxxxxxxxxxxxxxxx-*"
 			]
 		}
 	]

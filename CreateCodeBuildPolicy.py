@@ -17,6 +17,9 @@ config.read('Config.ini')
 # Variables
 CODEBUILD_POLICY = config['IAM']['IAM_CODEBUILD_POLICY_NAME']
 CODEBUILD_TRUST_POLICY = config['IAM']['IAM_CODEBUILD_TRUST_POLICY_FILE']
+AWS_REGION = config['DEFAULT']['AWS_REGION']
+AWS_ACCOUNT_ID = config['DEFAULT']['AWS_ACCOUNT_ID']
+LAMBDA_FUNCTION_NAME = config['LAMBDA']['LAMBDA_FUNCTION_NAME']
 
 # create AWS Identity and Access Management
 iam = boto3.client('iam')
@@ -35,6 +38,12 @@ policy_exists = any(policy['PolicyName'] == CODEBUILD_POLICY for policy in exist
 if not policy_exists:
     # converst json in string
     codebuild_policy_document_str = json.dumps(codebuild_policy_document)
+
+    # set variables
+    codebuild_policy_document_str = codebuild_policy_document_str.replace("xx-xxxxxxx-x", AWS_REGION)
+    codebuild_policy_document_str = codebuild_policy_document_str.replace("xxxxxxxxxxxx", AWS_ACCOUNT_ID)
+    codebuild_policy_document_str = codebuild_policy_document_str.replace("xxxxxxxxxxxxxxxxx", LAMBDA_FUNCTION_NAME)
+
 
     # create plicy
     response = iam.create_policy(
