@@ -16,15 +16,16 @@ if not os.path.isfile(CONFIG_FILE):
 config.sections()
 config.read('Config.ini')
 
-PROJECT_NAME = config['CODEBUILD']['CODEBUILD_PROJECT_NAME']
+CODEBUILD_PROJECT_NAME = config['CODEBUILD']['CODEBUILD_PROJECT_NAME']
 IAM_SERVICE_ROLE = config['IAM']['IAM_ARN'] + config['DEFAULT']['AWS_ACCOUNT_ID'] + ":role/" + config['IAM']['IAM_CODEBUILD_ROLE_NAME']
+GITHUB_LOCATION = config['GIT']['GITHUB_LOCATION']
 
-def check_codebuild_project_exists(PROJECT_NAME):
+def check_codebuild_project_exists(CODEBUILD_PROJECT_NAME):
     client = boto3.client('codebuild')
 
     try:
         # Attempt to get information about the project
-        response = client.batch_get_projects(names=[PROJECT_NAME])
+        response = client.batch_get_projects(names=[CODEBUILD_PROJECT_NAME])
         project_exists = bool(response['projects'])
         return project_exists
 
@@ -41,11 +42,11 @@ def create_codebuild_project():
     client = boto3.client('codebuild')
 
     response = client.create_project(
-    name = PROJECT_NAME,
+    name = CODEBUILD_PROJECT_NAME,
     description = 'SEM-II CodeBuildProject',
     source={
         'type': 'GITHUB',
-        'location': 'https://github.com/blro-ep/ITCNE23-SEM-II.git',
+        'location': GITHUB_LOCATION,
         'gitCloneDepth': 1,
         'gitSubmodulesConfig': {
             'fetchSubmodules': False
@@ -92,11 +93,11 @@ def create_codebuild_project():
 )
 
 # Check if the project already exists
-if not check_codebuild_project_exists(PROJECT_NAME):
+if not check_codebuild_project_exists(CODEBUILD_PROJECT_NAME):
     # If it doesn't exist, create it
     create_codebuild_project()
-    print(f'CodeBuild Project "{PROJECT_NAME}" created.')
+    print(f'CodeBuild Project "{CODEBUILD_PROJECT_NAME}" created.')
 else:
-    print(f'CodeBuild Project "{PROJECT_NAME}" already exist.')
+    print(f'CodeBuild Project "{CODEBUILD_PROJECT_NAME}" already exist.')
 
 
