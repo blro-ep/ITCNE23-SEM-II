@@ -174,6 +174,11 @@ Der Python-Code hat sicherlich noch Optimierungspotenzial. Zum Beispiel könnte 
 Um das Deployment während der Präsentation besser zu erläutern, habe ich mich für ein BPMN Digramm entschieden. BPMN ermöglicht eine rasche und leicht verständliche Darstellung der wichtigsten Schritte.
 Gleichzeitig war es für mich hilfreich, die Abfolge der Prozesse erneut zu überdenken und zu optimieren.
 
+**Zentrale Configuration für Variablen**
+Auf Grundlage des Inputs von Dozent Armin Dörzbach habe ich die zentralen Konfigurationsvariablen ausgelagert. Zur Umsetzung wählte ich die Python configparser Library und speicherte die Konfiguration in einer ini-Datei. Jedes Skript, das die ConfigParser-Klasse nutzt, überprüft zunächst, ob die Konfiguration geladen werden kann. Andernfalls wird das Skript abgebrochen. Die Aufteilung im ini-File nach Sektionen macht es besonders angenehm und übersichtlich zu lesen. Die Einbindung in die Skripte gestaltet sich ebenso einfach und gut verständlich.
+
+Ein etwas aufwendigerer Schritt war die Aktualisierung der Variablen in den yml/json-Dateien. Hierbei entschied ich mich dafür, die buildspec.yml während des Deployments anhand eines Templates neu zu erstellen. Gleichzeitig aktualisierte ich das CodeBuildTrustPolicy.json zur Laufzeit mit den korrekten Werten. Aus Gründen der Nachvollziehbarkeit bevorzuge ich die erste Variante. Soweit ist die integration gut gelungen, sodass die Namen der Objekte über die Zentrale Konfiguration angeapsst werden können.
+
 ## Installation
 
 ### AWS CLI
@@ -181,6 +186,10 @@ Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung
 
 ### Boto3
 Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von foldender AWS Dokumentation installiert [boto3.amazonaws.com - quickstart](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html).
+
+### Configparser
+Die Globalen Variabelen werden in ein Config.ini File ausgelagert. 
+Für das Handling wird die Python Library [configparser](https://docs.python.org/3/library/configparser.html) verwendet.
 
 ## AWS Komponenten
 
@@ -206,6 +215,7 @@ Folgendes Skript ist verantwortlich für die Erstellung sämtlicher erforderlich
 Dieses ruft folgende SubScripts auf:
 - [CreateLambdaRole.py](CreateLambdaRole.py)
 - [CreateLambdaFuction.py](CreateLambdaFuction.py)
+- [CreateCodeBuildBuildspec.py](./CreateCodeBuildBuildspec.py)
 - [CreateCodeBuildPolicy.py](CreateCodeBuildPolicy.py)
 - [CreateCodeBuildRole.py](CreateCodeBuildRole.py)
 - [CreateCodeBuildProject.py](CreateCodeBuildProject.py)
@@ -275,5 +285,6 @@ Die Lambda-Funktion kann extern über Postman getestet werden, wofür die Invoke
 ![TestingPostmanInvokeURL](./picture/TestingPostmanInvokeURL.png)
 ![TestingPostmanCheck](./picture/TestingPostmanCheck.png)
 
-
 ## Fazit
+
+
