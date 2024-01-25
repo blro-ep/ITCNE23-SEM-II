@@ -40,9 +40,7 @@ if not policy_exists:
     codebuild_policy_document_str = json.dumps(codebuild_policy_document)
 
     # set variables
-    codebuild_policy_document_str = codebuild_policy_document_str.replace("xx-xxxxxxx-x", AWS_REGION)
-    codebuild_policy_document_str = codebuild_policy_document_str.replace("xxxxxxxxxxxx", AWS_ACCOUNT_ID)
-    codebuild_policy_document_str = codebuild_policy_document_str.replace("xxxxxxxxxxxxxxxxx", LAMBDA_FUNCTION_NAME)
+    codebuild_policy_document_str = codebuild_policy_document_str.replace("xx-xxxxxxx-x", AWS_REGION).replace("xxxxxxxxxxxx", AWS_ACCOUNT_ID).replace("xxxxxxxxxxxxxxxxx", LAMBDA_FUNCTION_NAME)
 
 
     # create plicy
