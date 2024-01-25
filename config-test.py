@@ -41,14 +41,5 @@ if not policy_exists:
 
     # set variables
     codebuild_policy_document_str = codebuild_policy_document_str.replace("xx-region-x", AWS_REGION).replace("x-aws-id-x", AWS_ACCOUNT_ID).replace("x-LambdaName-x", LAMBDA_FUNCTION_NAME)
+    print(codebuild_policy_document_str)
 
-    # create plicy
-    response = iam.create_policy(
-        PolicyName = CODEBUILD_POLICY,
-        PolicyDocument = codebuild_policy_document_str,
-        Description = 'SEM-II IAM Policy for AWS CodeBuild'
-    )
-    print(f'CodeBuild Policy "{CODEBUILD_POLICY}" created.')
-
-else:
-    print(f'CodeBuild Policy "{CODEBUILD_POLICY}" already exist.')
