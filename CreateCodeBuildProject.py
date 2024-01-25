@@ -1,15 +1,31 @@
 #!/usr/bin/python3.10
 import boto3
 import json
+import configparser
+import os
 
-PROJECT_NAME = 'SemCodeBuildProject'
+# Get configurations from file
+CONFIG_FILE = "Config.ini"
+config = configparser.ConfigParser()
 
-def check_codebuild_project_exists(PROJECT_NAME):
+if not os.path.isfile(CONFIG_FILE):
+  print(f'ERROR: Configuration file not found. Exit Script')
+  exit()
+
+
+config.sections()
+config.read('Config.ini')
+
+CODEBUILD_PROJECT_NAME = config['CODEBUILD']['CODEBUILD_PROJECT_NAME']
+IAM_SERVICE_ROLE = config['IAM']['IAM_ARN'] + config['DEFAULT']['AWS_ACCOUNT_ID'] + ":role/" + config['IAM']['IAM_CODEBUILD_ROLE_NAME']
+GITHUB_LOCATION = config['GIT']['GITHUB_LOCATION']
+
+def check_codebuild_project_exists(CODEBUILD_PROJECT_NAME):
     client = boto3.client('codebuild')
 
     try:
         # Attempt to get information about the project
-        response = client.batch_get_projects(names=[PROJECT_NAME])
+        response = client.batch_get_projects(names=[CODEBUILD_PROJECT_NAME])
         project_exists = bool(response['projects'])
         return project_exists
 
@@ -26,11 +42,11 @@ def create_codebuild_project():
     client = boto3.client('codebuild')
 
     response = client.create_project(
-    name=PROJECT_NAME,
-    description='SEM-II CodeBuildProject',
+    name = CODEBUILD_PROJECT_NAME,
+    description = 'SEM-II CodeBuildProject',
     source={
         'type': 'GITHUB',
-        'location': 'https://github.com/blro-ep/ITCNE23-SEM-II.git',
+        'location': GITHUB_LOCATION,
         'gitCloneDepth': 1,
         'gitSubmodulesConfig': {
             'fetchSubmodules': False
@@ -60,10 +76,9 @@ def create_codebuild_project():
         'privilegedMode': False,
         'imagePullCredentialsType': 'CODEBUILD'
     },
-    serviceRole='arn:aws:iam::931054186430:role/SemBuildProjectRole',
+    serviceRole=IAM_SERVICE_ROLE,
     timeoutInMinutes=60,
     queuedTimeoutInMinutes=480,
-    encryptionKey='arn:aws:kms:eu-central-2:931054186430:alias/aws/s3',
     tags=[], 
     badgeEnabled=False,
     logsConfig={
@@ -78,10 +93,9 @@ def create_codebuild_project():
 )
 
 # Check if the project already exists
-if not check_codebuild_project_exists(PROJECT_NAME):
+if not check_codebuild_project_exists(CODEBUILD_PROJECT_NAME):
     # If it doesn't exist, create it
     create_codebuild_project()
-    print(f'CodeBuild Project "{PROJECT_NAME}" created.')
+    print(f'CodeBuild Project "{CODEBUILD_PROJECT_NAME}" created.')
 else:
-    print(f'CodeBuild Project "{PROJECT_NAME}" already exist.')
-
+    print(f'CodeBuild Project "{CODEBUILD_PROJECT_NAME}" already exist.')
