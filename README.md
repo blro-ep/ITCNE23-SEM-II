@@ -150,7 +150,7 @@ In diesem Sprint wurde mir klar, dass ich zusätzliche AWS-Komponenten benötige
 Trotz dieser Herausforderung habe ich mich dazu entschieden, den Fokus auf die IaC zu legen und den FaaS-Teil so einfach wie möglich zu halten.
 
 #### Sprint 3 - 31.01.24
-
+![Sprint 2](./picture/sprint-3.png)
 
 **Zertifizierung AZ-900: Microsoft Azure Fundamentals**
 Für die Prüfungsvorbereitung bin ich vor allem dem [Microsoft training course](https://learn.microsoft.com/en-us/training/courses/az-900t00) gefolgt und habe die offiziellen Probleprüfungen mehrmals durchgespielt [Exams AZ-900](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/).
