@@ -181,6 +181,7 @@ Ein etwas aufwendigerer Schritt war die Aktualisierung der Variablen in den yml/
 
 **Präsentation Semesterarbeit**
 Für meine Semesterarbeitspräsentation habe ich mich für Google Docs entschieden. Um die zeitliche Begrenzung von ca. 10 Minuten und die Herausforderung von insgesamt 16 Präsentationen an einem Nachmittag zu berücksichtigen, habe ich mich darauf fokussiert, die wichtigsten Informationen auf 5 Folien zu komprimieren. Ziel ist es, dass die Zuhörer den Inhalt meiner Semesterarbeit verstehen und durch die Live-Demo einen fundierten Einblick erhalten können.
+[TBZ Cloud-native Engineer ITCNE23, 2. Semester](https://docs.google.com/presentation/d/1XO7bUU0lEar4-m5H9oxfbq7Zo9dFgMaFuzZ-DY0fSpo/edit?usp=sharing)
 
 **Fazit der Semesterarbeit**
 Das Fazit der Semesterabeit soll ein Zusammenzug der drei Spints sein und wir in einem seperaten Punkt beschrieben ([Fazit](#fazit)). 
