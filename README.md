@@ -179,15 +179,21 @@ Auf Grundlage des Inputs von Dozent Armin Dörzbach habe ich die zentralen Konfi
 
 Ein etwas aufwendigerer Schritt war die Aktualisierung der Variablen in den yml/json-Dateien. Hierbei entschied ich mich dafür, die buildspec.yml während des Deployments anhand eines Templates neu zu erstellen. Gleichzeitig aktualisierte ich das CodeBuildTrustPolicy.json zur Laufzeit mit den korrekten Werten. Aus Gründen der Nachvollziehbarkeit bevorzuge ich die erste Variante. Soweit ist die integration gut gelungen, sodass die Namen der Objekte über die Zentrale Konfiguration angeapsst werden können.
 
+**Präsentation Semesterarbeit**
+Für meine Semesterarbeitspräsentation habe ich mich für Google Docs entschieden. Um die zeitliche Begrenzung von ca. 10 Minuten und die Herausforderung von insgesamt 16 Präsentationen an einem Nachmittag zu berücksichtigen, habe ich mich darauf fokussiert, die wichtigsten Informationen auf 5 Folien zu komprimieren. Ziel ist es, dass die Zuhörer den Inhalt meiner Semesterarbeit verstehen und durch die Live-Demo einen fundierten Einblick erhalten können.
+
+**Fazit der Semesterarbeit**
+Das Fazit der Semesterabeit soll ein Zusammenzug der drei Spints sein und wir in einem seperaten Punkt beschrieben ([Fazit](#fazit)). 
+
 ## Installation
 
 ### AWS CLI
 Für das automatisierte Deployment wurde die AWS CLI gemäss folgender Anleitung installiert [Install or update the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install).
 
-### Boto3
+### Phyton (Boto3)
 Um das Deployment mittels Python zu automatisieren, habe ich Boto3 anhand von foldender AWS Dokumentation installiert [boto3.amazonaws.com - quickstart](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html).
 
-### Configparser
+#### Configparser
 Die Globalen Variabelen werden in ein Config.ini File ausgelagert. 
 Für das Handling wird die Python Library [configparser](https://docs.python.org/3/library/configparser.html) verwendet.
 
@@ -286,5 +292,25 @@ Die Lambda-Funktion kann extern über Postman getestet werden, wofür die Invoke
 ![TestingPostmanCheck](./picture/TestingPostmanCheck.png)
 
 ## Fazit
+Semesterarbeit TBZ Cloud-native Engineer, Klasse ITCNE23, 2. Semester.
+
+Ziel der Semesterarbeit war, eine CI/CD Pipeline in der AWS mittels IaC automatisiert aufzubauen, um damit eine Lambda Function zu aktualliesieren.
+Die Umsetzung des IaC Teil erfolgte mittels Python (Boto3), welches mehrere Sripts beinhaltet, die beim Deployment seriel abgearbeitet werden. Auf Input des Donzenten Armin Dörzbach wurden wiederkehrende Variablen in eine zentrale Koniguration ausgelager, damit diese an einer Stelle geändert werden können (z.B.: AWS Region, AWS ID, LambdaFunction Name, CodeBuildProjectName, API-GatewayName usw.).
+Die ersten Gehversuche für den IaC Teil hatte ich mit Bash-Scripts gemacht, da ich dies bereits kannte. Der Switch auf Pyhton (Boto3) war am Anfang etwas harzig, bis ich das Prinzip mit den Klassen begriffen hatte. Die Boto3 AWS Dokumentation ist sehr umfangreich und enthält sehr gute Beschreibungen und Beispiele. Am meisten Aufwand hat mir die CodeBuild Implementierung gemacht, dies aufgrund des grossen Umfang sowie die verschieden Implementierungsmöglichkeiten. Anhand der Dokumentation war für mich oft nicht klar, welche Werte übergeben werden müssen. So konnte ich teilweise nur eine Lösung finden, indem ich den Setup über die AWS Console gemacht habe, und anschliessend mittels Boto3 ausgelesen habe. So konnte ich die Infos in die Python Scripts überführen. Das API Gateway gehörte ebenfalls zu den grösseren Herausforderungen, da dieses in viele unterschiedlich Teile aufgesplittet ist und noch explizit auf der Lambda Function berechtig werden muss. 
+Der Code hat sicherlich noch viel optimierungs Potential, ebenfalls müsste die Security durchleutet werden. Heute würde ich den Code in kleinere Scripts aufteilen und für das Testing gleich ein Script erstellen, welches das Deployment Rückgängig macht. Zudem würde ich globale Variablen gleich zu Beginn in ein Konfigrationsfile auslagern.
+
+Die Semseterabeit hat sehr viel Spass gemacht, in welcher ein grosser Teil des gelernten aus dem Lerngang ITCNE23 umgesetzt werden konnte. 
+Das autoamtisierte Deployment hat mir die Vorteile von IaC verinnerlicht. Das Deployment ist immer identsch, sowie benötig es nur einen Bruchteil des manuellen Setup.
+Die Umsetzung des Deployment mittels Boto3 hat meine Python Kenntnisse gefestigt, sowie den Umgang mit Klassen aufgezeigt.
+Ebenfalls durfte ich viel über die AWS Services IAM, Lambda, CodeBuild, API-Gateway lernen. Es ist erstaunlich, was mit meinem heutigen Wissenstand bereits möglich ist, das Potential ist jedoch noch riesig.
 
 
+Wieso habe ich die AWS / Azure Zertifizierung in dieses Semester integriert.
+Im Q4/23 wurde unsere Abteilung bei der Swisscom informiert, dass im 2024 allenfalls neues Business für AWS / Azure bei uns in die Abteilung kommt. Für die Mitarbeit ist die Zertifizierung zum *AWS Certified Cloud Practitioner / AZ-900 Microsoft Azure Fundamentals* von Vorteil. Aus diesem Grund habe ich mich entschieden, diese beiden Zertifierungen ebenfalls in diese Semesterarbeit zu integrieren.
+Die AWS Zertifizierung hat sich als Aufwändiger als gedacht herausgestellt. Eine grosse Hilfe waren hier die Udemy Kurse, welche ich durchgearbeitet habe.
+Anschliessend habe ich den AZ-900 gemacht, wobei ich stark von der AWS Zertifizierung profitieren konnte. Das Prinzip ist indentisch, einfach andere Namen. Für die AZ-900 Zertifizerung habe ich mich vorallem an den LernPath von Microsoft gehalten. 
+Aufgrund der Zertifizierungen war der Monat Dezember eine grosse Herausforderung mit dem Terminmanagement, damit der praktische Teil der Semesterarbeit nicht zu kurz kam.
+Schlussendlich hat sich jedoch der Aufwand gelohnt. Für mich gehören diese beiden Zertifizierungen zu diesem Lerngang.
+
+Der Yubikey war nicht teil der Semesterarbeit, hat sich jedoch bewährt bei den Arbeiten mit AWS / Github.
+Eine wirkliche Erleichterung für die 2-Faktor authenfizierung, welche nicht mehr missen möchte. Ich verwende diesen heute auf verschieden Plattformen und finde dies eine konfortable Lösung.
