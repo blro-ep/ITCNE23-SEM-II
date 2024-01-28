@@ -1,21 +1,19 @@
 # ITCNE23-SEM-II
 
 ## Einleitung
-Die zentrale Ausrichtung der Semesterarbeit konzentriert sich auf den Aufbau von Know-how im Bereich der Continuous Integration/Continuous Deployment (CI/CD) Pipeline unter Verwendung von AWS (Amazon Web Services). Das Ziel besteht darin, eine effiziente CI/CD-Pipeline zu erstellen, die in der Lage ist, eine Lambda-Funktion mithilfe von Git-Operationen zu aktualisieren. Der gesamte Prozess wird durch einen Git-PUSH ausgelöst, der wiederum AWS CodeBuild in Gang setzt. AWS CodeBuild übernimmt dabei das Deployment der aktualisierten Lambda-Funktion.
+Die Semesterarbeit fokussiert sich auf die automatisierte Einrichtung einer CI/CD-Pipeline in der AWS (Amazon Web Services). Das Deployment wird mithilfe von Infrastructure as Code (IaC) unter Verwendung von Python-Code durchgeführt.
 
-Die Lambda-Funktion, die Gegenstand dieser Pipeline ist, soll als REST API über das Web zugänglich sein. Dies bedeutet, dass die Funktionalität der Lambda-Funktion über HTTP-Anfragen erreichbar sein wird.
+Nach erfolgreichem Deployment wird eine Lambda-Funktion als REST API über das Internet zugänglich sein. Die Implementierung der Lambda-Funktion erfolgt ebenfalls in Python.
 
-Der gesamte Ablauf beginnt mit Änderungen im Git-Repository, die durch einen Git-PUSH ausgelöst werden. Dieses Ereignis dient als Auslöser für AWS CodeBuild, das den Build-Prozess initiiert und sicherstellt, dass alle erforderlichen Abhängigkeiten und Ressourcen korrekt verarbeitet werden. Nach einem erfolgreichen Build übernimmt AWS CodeBuild das Deployment der Lambda-Funktion in der AWS-Infrastruktur.
-
-Um sicherzustellen, dass die Lambda-Funktion als REST API über das Web zugänglich ist, wird das AWS API Gateway eingesetzt. Dies umfasst die Konfiguration von Endpunkten sowie die Implementierung von Sicherheitsmassnahmen, um eine nahtlose und sichere Kommunikation mit der Lambda-Funktion zu gewährleisten. Das AWS API Gateway spielt dabei eine zentrale Rolle, indem es als Schnittstelle zwischen externen Anfragen und der Lambda-Funktion fungiert.
+Das gesamte Codeprojekt der Semesterarbeit wird in einem Github-Repository verwaltet. Durch die Nutzung von Git können Aktualisierungen an der Lambda-Funktion einfach über Git-PUSH von diesem Repository aus vorgenommen werden.
 
 ### Übersicht
 <img src="./picture/SEM-II_Overview.drawio.svg">
 
 ## Projektmanagement
-Die gewählte Projektmanagementmethode für diese Semesterarbeit ist Kanban, eine agile Arbeitsmethode, die darauf abzielt, Arbeitsprozesse zu visualisieren und den Arbeitsfluss effektiv zu steuern. Die Entscheidung für Kanban basiert auf der Flexibilität und Anpassungsfähigkeit, die diese Methode bietet, insbesondere im Hinblick auf die Dynamik von Forschungsprojekten und Semesterarbeiten.
+Die gewählte Projektmanagementmethode für diese Semesterarbeit ist Kanban, eine agile Arbeitsmethode, die darauf abzielt, Arbeitsprozesse zu visualisieren und den Arbeitsfluss effektiv zu steuern. Die Entscheidung für Kanban basiert auf der Flexibilität und Anpassungsfähigkeit, die diese Methode bietet.
 
-Um die Semesterarbeit effektiv zu verwalten, wird sie in mehrere Iterationen, auch als Sprints bekannt, unterteilt. Diese Sprints dienen dazu, den Fortschritt der Arbeit zu verfolgen, klare Ziele für bestimmte Zeiträume zu setzen und regelmässige Überprüfungen durchzuführen. Die Aufgaben werden entsprechend priorisiert und in die Kanban-Board-Phasen wie "To-Do", "In Progress" und "Done" einsortiert, um einen klaren Überblick über den Projektstatus zu gewährleisten.
+Um die Semesterarbeit effektiv zu verwalten, wird sie in mehrere Iterationen (Sprints) unterteilt. Die Sprints dienen dazu, den Fortschritt der Arbeit zu verfolgen, klare Ziele für bestimmte Zeiträume zu setzen und regelmässige Überprüfungen durchzuführen. Die Aufgaben werden entsprechend priorisiert und in die Kanban-Board-Phasen wie "To-Do", "In Progress" und "Done" einsortiert, um einen klaren Überblick über den Projektstatus zu gewährleisten.
 
 Für das Gesamtprojektmanagement wird ein Github Project verwendet ([ITCNE23-SEM-II](https://github.com/users/blro-ep/projects/6)). Github Project ermöglicht eine integrierte und kollaborative Verwaltung von Aufgaben, Issues und Milestones. Hier können nicht nur die Kanban-Boards erstellt werden, sondern auch die Fortschritte dokumentiert, Diskussionen geführt und notwendige Ressourcen bereitgestellt werden. Diese zentrale Plattform fördert die Zusammenarbeit und erleichtert die Nachverfolgung von Änderungen.
 
@@ -57,7 +55,7 @@ Das Kanbanboard wir in 4 Spalten aufgeteilt.
 ![Kanbanboard](picture/kanban_board.png)
 
 #### Task Labels
-Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
+Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren.
 - Doku  --> Task für die Dokumentation
 - IaC   --> Task für Infrastructure as Code
 - FaaS  --> Task für Function as a Serivce
@@ -84,8 +82,8 @@ Es werden folgende Labels verwendet um die Tasks nach Themen zu gruppieren
 
 ##### AWS Provider
 AWS wird verwendet, um eine FaaS zur Verfügung zu stellen, welche auf dem Service AWS Lambda aufgebaut wird.
-Das Deploment soll von Github angestossen werden und mitteld CodeBuild automatisch erfolgen. 
-Es ist zu prüfen, welche AWS Services für die Vorgehen zusätlich benötigt werden.
+Das Deploment soll von Github angestossen werden und mittels CodeBuild automatisch erfolgen. 
+Es ist zu prüfen, welche AWS Services für dieses Vorgehen zusätlich benötigt werden.
 
 ##### Github
 Das GitHub Repository fungiert als zentraler Speicherort für den gesamten Code der Semesterarbeit. Hier werden sämtliche Ressourcen, Skripte und Konfigurationen verwaltet. 
@@ -153,8 +151,7 @@ Trotz dieser Herausforderung habe ich mich dazu entschieden, den Fokus auf die I
 ![Sprint 2](./picture/sprint-3.png)
 
 **Zertifizierung AZ-900: Microsoft Azure Fundamentals**
-Für die Prüfungsvorbereitung bin ich vor allem dem [Microsoft training course](https://learn.microsoft.com/en-us/training/courses/az-900t00) gefolgt und habe die offiziellen Probleprüfungen mehrmals durchgespielt [Exams AZ-900](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/).
-![az-900-practice](./picture/az-900-practice.png)
+Für die Prüfungsvorbereitung bin ich vor allem dem [Microsoft training course](https://learn.microsoft.com/en-us/training/courses/az-900t00) gefolgt und habe die offiziellen Probleprüfungen mehrmals durchgespielt [Exams AZ-900](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/ / [az-900-practice](./picture/az-900-practice.png)).
 Als züstzliche Unterstützung habe ich das Udemy Learining [az900-azure](https://www.udemy.com/course/az900-azure/) gekauft.
 Die Prüfung wurde am 29.12.2023 erfolgreich absolviert [Microsoft Certified: Azure Fundamentals](https://learn.microsoft.com/api/credentials/share/en-us/RogerBlum-7482/25F3FCE9EAE61434?sharingId=965F21179058A5EF).
 
@@ -163,7 +160,7 @@ Die Automatisierung des API Gateways muss in einzelne Schritte unterteilt werden
 
 Allerdings war die Lambda-Funktion zu diesem Zeitpunkt noch nicht über das Internet (Postman) erreichbar. Dafür musste auf dem API Gateway eine Stage eingerichtet werden. Diese erhält dann eine Aufruf-URL, die für externe Anfragen genutzt werden kann.
 
-**Optimierungen der boto3 automatisierungen**
+**Optimierungen der boto3 Automatisierungen**
 Den IaC-Teil habe ich in mehrere Python-Skripte aufgeteilt. Um das Deployment mit einem einzelnen Skript durchzuführen, rufe ich diese über ein zentrales Skript auf. Das Problem war, dass die einzelnen Skripte einzeln funktionierten, aber das zentrale Skript nicht. Nachdem ich eine Verzögerung zwischen den Aufrufen der einzelnen Skripte eingefügt habe, hat es funktioniert.
 
 Für das Testen des gesamten Deployments habe ich ein Löschskript erstellt, das analog zum Deployment funktioniert. In Zukunft würde ich dieses bereits früher erstellen, da es eine grosse Erleichterung beim Testen darstellt, anstatt den Setup manuell zu löschen.
@@ -295,23 +292,20 @@ Die Lambda-Funktion kann extern über Postman getestet werden, wofür die Invoke
 ## Fazit
 Semesterarbeit TBZ Cloud-native Engineer, Klasse ITCNE23, 2. Semester.
 
-Ziel der Semesterarbeit war, eine CI/CD Pipeline in der AWS mittels IaC automatisiert aufzubauen, um damit eine Lambda Function zu aktualliesieren.
-Die Umsetzung des IaC Teil erfolgte mittels Python (Boto3), welches mehrere Sripts beinhaltet, die beim Deployment seriel abgearbeitet werden. Auf Input des Donzenten Armin Dörzbach wurden wiederkehrende Variablen in eine zentrale Koniguration ausgelager, damit diese an einer Stelle geändert werden können (z.B.: AWS Region, AWS ID, LambdaFunction Name, CodeBuildProjectName, API-GatewayName usw.).
-Die ersten Gehversuche für den IaC Teil hatte ich mit Bash-Scripts gemacht, da ich dies bereits kannte. Der Switch auf Pyhton (Boto3) war am Anfang etwas harzig, bis ich das Prinzip mit den Klassen begriffen hatte. Die Boto3 AWS Dokumentation ist sehr umfangreich und enthält sehr gute Beschreibungen und Beispiele. Am meisten Aufwand hat mir die CodeBuild Implementierung gemacht, dies aufgrund des grossen Umfang sowie die verschieden Implementierungsmöglichkeiten. Anhand der Dokumentation war für mich oft nicht klar, welche Werte übergeben werden müssen. So konnte ich teilweise nur eine Lösung finden, indem ich den Setup über die AWS Console gemacht habe, und anschliessend mittels Boto3 ausgelesen habe. So konnte ich die Infos in die Python Scripts überführen. Das API Gateway gehörte ebenfalls zu den grösseren Herausforderungen, da dieses in viele unterschiedlich Teile aufgesplittet ist und noch explizit auf der Lambda Function berechtig werden muss. 
-Der Code hat sicherlich noch viel optimierungs Potential, ebenfalls müsste die Security durchleutet werden. Heute würde ich den Code in kleinere Scripts aufteilen und für das Testing gleich ein Script erstellen, welches das Deployment Rückgängig macht. Zudem würde ich globale Variablen gleich zu Beginn in ein Konfigrationsfile auslagern.
+Ziel der Semesterarbeit war, eine CI/CD Pipeline in der AWS mittels IaC automatisiert aufzubauen, um damit eine Lambda Function zu aktualisieren.
+Die Umsetzung des IaC Teil erfolgte mittels Python (Boto3), welches mehrere Sripts beinhaltet, die beim Deployment seriel abgearbeitet werden. Auf Input des Donzenten Armin Dörzbach wurden wiederkehrende Python-Variablen in eine zentrale Koniguration ausgelager, damit diese an einer Stelle geändert werden können (z.B.: AWS Region, AWS ID, LambdaFunction Name, CodeBuildProjectName, API-GatewayName usw.).
+Die ersten Versuche für den IaC Teil hatte ich mit Bash-Scripts gemacht, da ich dies bereits kannte. Der Switch auf Pyhton (Boto3) war am Anfang etwas aufwändig, bis ich das Prinzip mit den Klassen begriffen hatte. Die Boto3 AWS Dokumentation ist sehr umfangreich und enthält sehr gute Beschreibungen und Beispiele. 
+Am meisten Aufwand hat mir die CodeBuild Implementierung gemacht, dies aufgrund des grossen Umfang sowie die verschieden Implementierungsmöglichkeiten. Anhand der Dokumentation war für mich oft nicht klar, welche Werte übergeben werden müssen. So konnte ich teilweise nur eine Lösung finden, indem ich den Setup über die AWS Console gemacht habe und anschliessend mittels Boto3 ausgelesen habe. So konnte ich die Infos in die Python Scripts überführen. Das API Gateway gehörte ebenfalls zu den grösseren Herausforderungen, da dieses in viele unterschiedlich Teile aufgesplittet ist und noch explizit auf der Lambda Function berechtig werden muss. 
+Der Code hat sicherlich noch viel optimierungs Potential, ebenfalls müsste die Security durchleutet werden. Heute würde ich den Code in kleinere Scripts aufteilen und für das Testing gleich ein Script erstellen, welches das Deployment rückgängig macht. Zudem würde ich globale Variablen schon zu Beginn in ein Konfigrationsfile auslagern.
 
-Die Semseterabeit hat sehr viel Spass gemacht, in welcher ein grosser Teil des gelernten aus dem Lerngang ITCNE23 umgesetzt werden konnte. 
-Das autoamtisierte Deployment hat mir die Vorteile von IaC verinnerlicht. Das Deployment ist immer identsch, sowie benötig es nur einen Bruchteil des manuellen Setup.
-Die Umsetzung des Deployment mittels Boto3 hat meine Python Kenntnisse gefestigt, sowie den Umgang mit Klassen aufgezeigt.
-Ebenfalls durfte ich viel über die AWS Services IAM, Lambda, CodeBuild, API-Gateway lernen. Es ist erstaunlich, was mit meinem heutigen Wissenstand bereits möglich ist, das Potential ist jedoch noch riesig.
+Die Semseterabeit hat sehr viel Spass gemacht, da ich einen bedeutenden Teil des im Kurs ITCNE23 erworbenen Wissens anwenden konnte. Insbesondere das automatisierte Deployment hat mir die Vorteile von Infrastructure as Code (IaC) eindrucksvoll vor Augen geführt.
+Die Implementierung des Deployments mithilfe von Boto3 hat meine Python-Kenntnisse weiter vertieft und mir einen tieferen Einblick in den Umgang mit Klassen verschafft. Zusätzlich konnte ich mein Verständnis für verschiedene AWS-Services wie IAM, Lambda, CodeBuild und API-Gateway erweitern. Es ist erstaunlich, welche Möglichkeiten sich bereits mit meinem aktuellen Wissensstand eröffnen, aber gleichzeitig wird mir bewusst, dass das Potenzial noch enorm ist.
 
 
 Wieso habe ich die AWS / Azure Zertifizierung in dieses Semester integriert.
-Im Q4/23 wurde unsere Abteilung bei der Swisscom informiert, dass im 2024 allenfalls neues Business für AWS / Azure bei uns in die Abteilung kommt. Für die Mitarbeit ist die Zertifizierung zum *AWS Certified Cloud Practitioner / AZ-900 Microsoft Azure Fundamentals* von Vorteil. Aus diesem Grund habe ich mich entschieden, diese beiden Zertifierungen ebenfalls in diese Semesterarbeit zu integrieren.
+Im Q4/23 wurden wir von unserem Arbeitgeber informiert, dass im 2024 allenfalls neues Business für AWS / Azure bei uns in die Abteilung kommt. Für die Mitarbeit ist die Zertifizierung zum *AWS Certified Cloud Practitioner / AZ-900 Microsoft Azure Fundamentals* von Vorteil. Aus diesem Grund habe ich mich entschieden, diese beiden Zertifierungen ebenfalls in diese Semesterarbeit zu integrieren.
 Die AWS Zertifizierung hat sich als Aufwändiger als gedacht herausgestellt. Eine grosse Hilfe waren hier die Udemy Kurse, welche ich durchgearbeitet habe.
-Anschliessend habe ich den AZ-900 gemacht, wobei ich stark von der AWS Zertifizierung profitieren konnte. Das Prinzip ist indentisch, einfach andere Namen. Für die AZ-900 Zertifizerung habe ich mich vorallem an den LernPath von Microsoft gehalten. 
-Aufgrund der Zertifizierungen war der Monat Dezember eine grosse Herausforderung mit dem Terminmanagement, damit der praktische Teil der Semesterarbeit nicht zu kurz kam.
-Schlussendlich hat sich jedoch der Aufwand gelohnt. Für mich gehören diese beiden Zertifizierungen zu diesem Lerngang.
+Anschliessend habe ich den AZ-900 gemacht, wobei ich stark von der AWS Zertifizierung profitieren konnte. Das Prinzip ist indentisch, die Services und Funktionen heissen einfach anders. Für die AZ-900 Zertifizerung habe ich mich vorallem an den LernPath von Microsoft gehalten. 
+Die Zertifizierungen stellten im November / Dezember eine erhebliche Herausforderung dar, da ich mein Zeitmanagement sorgfältig abstimmen musste, um den praktischen Teil meiner Semesterarbeit nicht zu vernachlässigen. Trotzdem hat sich der Aufwand letztendlich gelohnt. Beide Zertifizierungen betrachte ich als wesentlicher Bestandteil meines Lernfortschritts.
 
-Der Yubikey war nicht teil der Semesterarbeit, hat sich jedoch bewährt bei den Arbeiten mit AWS / Github.
-Eine wirkliche Erleichterung für die 2-Faktor authenfizierung, welche nicht mehr missen möchte. Ich verwende diesen heute auf verschieden Plattformen und finde dies eine konfortable Lösung.
+Der Yubikey war kein Bestandteil der Semesterarbeit, hat sich jedoch als äusserst nützlich bei meiner Arbeit mit AWS und Github erwiesen. Er stellt eine erhebliche Erleichterung für die Zwei-Faktor-Authentifizierung dar, auf die ich nicht mehr verzichten möchte. Heutzutage nutze ich ihn auf verschiedenen Plattformen und finde diese Lösung äusserst komfortabel.
