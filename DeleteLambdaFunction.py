@@ -29,4 +29,4 @@ try:
 except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 else: 
-    print(f'"{LAMBDA_FUNCTION_NAME}" deleted.')
+    print(f'Lambda Function "{LAMBDA_FUNCTION_NAME}" deleted.')

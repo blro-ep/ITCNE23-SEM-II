@@ -49,5 +49,5 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'Lambda Permission "{LAMBDA_STATEMENT_ID}" added.')
+    print(f'API Gateway permission for Lambda "{LAMBDA_STATEMENT_ID}" added.')
 

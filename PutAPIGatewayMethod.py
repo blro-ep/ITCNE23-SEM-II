@@ -55,7 +55,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutMethod "{response["httpMethod"]}" added.')
+    print(f'API Gateway PutMethod "{response["httpMethod"]}" added.')
 
 try:
   put_method_res = client.put_method_response(
@@ -69,7 +69,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutMethodResponse "{response["httpMethod"]}" added.')
+    print(f'API Gateway PutMethodResponse "{response["httpMethod"]}" added.')
 
 try:
   arn_uri = APIGATEWAY_ARN_URI
@@ -89,7 +89,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'PutIntegration "POST" added.')
+    print(f'API Gateway PutIntegration "POST" added.')
 
 try:
   put_integration_response = client.put_integration_response(
@@ -103,7 +103,7 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'IngegrationResponse "GET" added.')
+    print(f'API Gateway PutIngegrationResponse "GET" added.')
 
 try:
   response = client.create_deployment(

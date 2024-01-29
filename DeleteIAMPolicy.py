@@ -39,5 +39,5 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'"{IAM_POLICY}" Detach from Role "{IAM_ROLE}".')
+    print(f'"{IAM_POLICY}" detach from Role "{IAM_ROLE}".')
     print(f'"{IAM_POLICY}" deleted.')

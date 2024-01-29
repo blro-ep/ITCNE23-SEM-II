@@ -46,14 +46,14 @@ if not check_role_exist(IAM_LAMBDA_ROLE_NAME):
         RoleName=IAM_LAMBDA_ROLE_NAME,
         AssumeRolePolicyDocument=json.dumps(trust_policy_document)
     )
-    print(f'Role "{IAM_LAMBDA_ROLE_NAME}" created.')
+    print(f'Lambda Role "{IAM_LAMBDA_ROLE_NAME}" created.')
 
     # Berechtigung zur Trust-Policy hinzufügen (AWSLambdaBasicExecutionRole)
     iam_client.attach_role_policy(
         RoleName=IAM_LAMBDA_ROLE_NAME,
         PolicyArn=IAM_LAMBDA_POLICY_ARN
     )
-    print(f'LambdaTrustPolicy added to Role "{IAM_LAMBDA_ROLE_NAME}".')
+    print(f'Lambda TrustPolicy added to Role "{IAM_LAMBDA_ROLE_NAME}".')
     
 else:
     print(f'Role "{IAM_LAMBDA_ROLE_NAME}" already exists.')

@@ -30,4 +30,4 @@ except ValueError:
     print("Error creating buildspec")
 
 else: 
-    print(f'"{CODEBUILD_BUILDSPEC}" created.')
+    print(f'CodeBuild "{CODEBUILD_BUILDSPEC}" created.')

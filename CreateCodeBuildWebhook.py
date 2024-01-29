@@ -40,4 +40,4 @@ except botocore.exceptions.ClientError as err:
     print(format(err.response['Error']['Message']))
 
 else: 
-    print(f'Webhook added to Project "{PROJECT_NAME}".')
+    print(f'CodeBuild Webhook added to Project "{PROJECT_NAME}".')

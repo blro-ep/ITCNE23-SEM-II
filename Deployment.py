@@ -16,7 +16,7 @@ for script_name in script_names:
 
         # Run the script
         subprocess.run(command, check=True)
-        time.sleep(6)
+        time.sleep(7)
 
     except subprocess.CalledProcessError as e:
         # Handle the error if the script fails
