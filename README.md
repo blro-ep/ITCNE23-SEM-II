@@ -242,7 +242,7 @@ Folgendes Skript ist verantwortlich für die Löschung der verwendeten AWS-Kompo
 - [DeleteIAMPolicy.py](DeleteIAMPolicy.py)
 - [DeleteIAMRole.py](DeleteIAMRole.py)
 
-#### Übersicht Undo Depoyment
+#### Übersicht DeploymentDestroy
 <img src="./bpmn/DeploymentDestroy.svg">
 
 ## Testing
@@ -261,7 +261,7 @@ Die Testaktivitäten umfassen die Verwendung der von lokalen Python-Scripts, AWS
 | TC-07 | Github | Github Commit mit Anpassung an Lambda Python Script | Änderung auf Github erfolgreich eingecheckt |  Commit "verified signature" | [TC-07](./picture/TestCases/TC-07.png) |
 | TC-08 | AWS CodeBuild | Prüfen Codebiild | Aufgrund des Commit wurde CodeBuild gestartet | Build Status "Succeeded" | [TC-08](./picture/TestCases/TC-08.png) |
 | TC-09 | Postman | Prüfen Lambdas Function | Lambda Fuction aufruf via Postmann möglich | Status Code 200 | [TC-09](./picture/TestCases/TC-09.png) |
-| TC-10 | IaC | Start Deployment undo | Sämtliche Scripts werden ohne Error ausgeführt | AWS Infrastructure gelsöcht (Prüfe TC-02 bis TC-06) | [TC-10](./picture/TestCases/TC-10.png) |
+| TC-10 | IaC | Start DeploymentDestroy | Sämtliche Scripts werden ohne Error ausgeführt | AWS Infrastructure gelsöcht (Prüfe TC-02 bis TC-06) | [TC-10](./picture/TestCases/TC-10.png) |
 
 ### Testing AWS Infrastructure
 
