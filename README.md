@@ -233,7 +233,7 @@ Dieses ruft folgende SubScripts auf:
 
 ### Undo Deployment
 Folgendes Skript ist verantwortlich für die Löschung der verwendeten AWS-Komponenten.
-- [Deployment_undo.py](Deployment_undo.py)
+- [DeploymentDestroy.py](DeploymentDestroy.py)
 
 - [DeleteAPIGateway.py](DeleteAPIGateway.py)
 - [DeleteCodeBuild.py](DeleteCodeBuild.py)
@@ -243,7 +243,7 @@ Folgendes Skript ist verantwortlich für die Löschung der verwendeten AWS-Kompo
 - [DeleteIAMRole.py](DeleteIAMRole.py)
 
 #### Übersicht Undo Depoyment
-<img src="./bpmn/Deployment_undo.svg">
+<img src="./bpmn/DeploymentDestroy.svg">
 
 ## Testing
 
