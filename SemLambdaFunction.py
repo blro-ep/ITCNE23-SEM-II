@@ -18,6 +18,6 @@ def lambda_handler(event, context):
             "Lambda Function Name ": json_function_name,
             "Lambda OS Times ": json_times,
             "Lambda OS CPU ": json_cpu,
-            "TEST ": "22" 
+            "TEST ": "23" 
         })
     }
